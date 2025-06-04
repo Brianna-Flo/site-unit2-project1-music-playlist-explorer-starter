@@ -1,22 +1,23 @@
 body {
-  font-family: "Arial", sans-serif;
+  /* font-family: "Arial", sans-serif; */
+  font-family: "Winky Rough", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f8f8f8;
 }
 
 header {
-  background-color: lightgray;
+  background-color: #007EA7;
   display: flex;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 40px;
   /*issue fixed: color reaches to the start of the page*/
   padding-left: 20px;
-  color: #595959;
+  justify-content: center;
+  color: #FFFFFF;
 }
 
 footer {
-  background-color: lightgray;
+  background-color: #007EA7;
   padding: 5px;
   /*fixes the footer to the bottom of the page*/
   position: fixed;
@@ -41,7 +42,6 @@ footer {
 }
 
 #playlist-photo {
-  border: 1px solid grey;
   width: 140px;
   height: 140px;
   margin: 5px;
@@ -54,7 +54,6 @@ footer {
 }
 
 #heart {
-  border: 1px solid grey;
   width: 25px;
   height: 25px;
   margin-right: 5px;
@@ -62,7 +61,7 @@ footer {
 
 /* CSS for Modal*/
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -80,24 +79,9 @@ footer {
   border: 1px solid #888;
   width: 80%;
 }
-/*
-.close {
-   color: #aaa;
-   float: right;
-   font-size: 28px;
-   font-weight: bold;
-}
-.close:hover,
-.close:focus {
-   color: black;
-   text-decoration: none;
-   cursor: pointer;
-}
-   */
 
 /* Modal Styling */
 #playlist-modal-photo {
-  border: 1px solid grey;
   width: 150px;
   height: 100px;
   margin-right: 20px;
@@ -109,7 +93,6 @@ footer {
 }
 
 .song-img {
-  border: 1px solid grey;
   width: 75px;
   height: 50px;
   margin: 10px;
@@ -118,7 +101,6 @@ footer {
 
 .song {
   display: flex;
-  border: 1px solid grey;
   align-items: center;
   margin: 10px 0px;
 }
@@ -132,4 +114,8 @@ footer {
   display: flex;
   margin: 10px;
   margin-left: auto;
+}
+
+.outline {
+  border: 1px solid grey;
 }
