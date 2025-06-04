@@ -4,3 +4,20 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+
+header {
+    background-color: lightgray;
+    /*issue fixed: color reaches to the start of the page*/
+    padding: 5px;
+    text-size: 16px;
+    color: #595959;
+}
+
+footer {
+    background-color: lightgray;
+    padding: 5px;
+    /*fixes the footer to the bottom of the page*/
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
