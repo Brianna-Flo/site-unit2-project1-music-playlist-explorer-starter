@@ -1,23 +1,21 @@
 body {
-  /* font-family: "Arial", sans-serif; */
-  font-family: "Winky Rough", sans-serif;
+  font-family: "Arial", sans-serif;
+  /* font-family: "Winky Rough", sans-serif; */
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
+  background-color: #DDFFF7;
 }
 
 header {
-  background-color: #007EA7;
   display: flex;
+  justify-content: center;
   font-size: 40px;
   /*issue fixed: color reaches to the start of the page*/
   padding-left: 20px;
-  justify-content: center;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 footer {
-  background-color: #007EA7;
   padding: 5px;
   /*fixes the footer to the bottom of the page*/
   position: fixed;
@@ -25,14 +23,22 @@ footer {
   width: 100%;
 }
 
+header, footer {
+  background-color: #93E1D8;
+}
 .card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 150px;
   margin: 20px;
-  padding: 5px;
-  border: 1px solid grey;
+  padding: 0px;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  color: 
 }
 
 .card-row {
@@ -42,9 +48,11 @@ footer {
 }
 
 #playlist-photo {
-  width: 140px;
+  width: 100%;
   height: 140px;
-  margin: 5px;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 10px 10px 0 0;
 }
 
 .likes {
@@ -117,5 +125,5 @@ footer {
 }
 
 .outline {
-  border: 1px solid grey;
+  border: 1px solid #033F63;
 }
