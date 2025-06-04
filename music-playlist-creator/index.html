@@ -1,27 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Music Playlist Explorer</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header id="banner">
-        <p>Music Playlist Explorer</p>
+      <p>Music Playlist Explorer</p>
     </header>
 
-    <main> 
+    <main>
+      <!--should we use class or id for each playlist card?-->
+      <section class="playlist-cards">
+        <section class="card-row">
+          <section class="card">
+            <img id="playlist-photo" />
+            <h3>Playlist Title</h3>
+            <p>Creator Name</p>
+            <img id="heart" />
+          </section>
+          <section class="card">
+            <img id="playlist-photo" />
+            <h3>Playlist Title</h3>
+            <p>Creator Name</p>
+            <img id="heart" />
+          </section>
+          <section class="card">
+            <img id="playlist-photo" />
+            <h3>Playlist Title</h3>
+            <p>Creator Name</p>
+            <img id="heart" />
+          </section>
+          <section class="card">
+            <img id="playlist-photo" />
+            <h3>Playlist Title</h3>
+            <p>Creator Name</p>
+            <img id="heart" />
+          </section>
+        </section>
+
+        <section class="card-row">
+          <section class="card">
+            <img id="playlist-photo" />
+            <h3>Playlist Title</h3>
+            <p>Creator Name</p>
+            <img id="heart" />
+          </section>
+          <section class="card">
+            <img id="playlist-photo" />
+            <h3>Playlist Title</h3>
+            <p>Creator Name</p>
+            <img id="heart" />
+          </section>
+          <section class="card">
+            <img id="playlist-photo" />
+            <h3>Playlist Title</h3>
+            <p>Creator Name</p>
+            <img id="heart" />
+          </section>
+          <section class="card">
+            <img id="playlist-photo" />
+            <h3>Playlist Title</h3>
+            <p>Creator Name</p>
+            <img id="heart" />
+          </section>
+        </section>
+      </section>
     </main>
 
     <footer>
-        <p> </p>
-        <div class="footer-block"></div>
+      <p></p>
+      <div class="footer-block"></div>
     </footer>
     <script src="data/data.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

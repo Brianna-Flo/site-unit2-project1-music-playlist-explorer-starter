@@ -7,6 +7,7 @@ body {
 
 header {
     background-color: lightgray;
+    display: flex;
     /*issue fixed: color reaches to the start of the page*/
     padding: 5px;
     text-size: 16px;
@@ -19,5 +20,20 @@ footer {
     /*fixes the footer to the bottom of the page*/
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 100%
+}
+
+.playlist-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 20px;
+    padding: 20px;
 }
