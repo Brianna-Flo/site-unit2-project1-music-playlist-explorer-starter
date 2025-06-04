@@ -8,9 +8,10 @@ body {
 header {
     background-color: lightgray;
     display: flex;
+    font-size: 20px;
+    font-weight: bold;
     /*issue fixed: color reaches to the start of the page*/
-    padding: 5px;
-    text-size: 16px;
+    padding-left: 20px;
     color: #595959;
 }
 
@@ -23,9 +24,14 @@ footer {
     width: 100%
 }
 
-.playlist-cards {
+.card {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    width: 150px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid grey;
 }
 
 .card-row {
@@ -33,7 +39,22 @@ footer {
     justify-content: space-around;
 }
 
-.card {
-    margin: 20px;
-    padding: 20px;
+#playlist-photo {
+    border: 1px solid grey;
+    width: 140px;
+    height: 140px;
+    margin: 5px;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+#heart {
+    border: 1px solid grey;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
 }
