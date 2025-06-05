@@ -78,6 +78,7 @@ header, footer {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+
 }
 
 .modal-content {
@@ -86,6 +87,16 @@ header, footer {
   padding: 20px 100px;
   border: 1px solid #888;
   width: 80%;
+  animation: 0.3s ease-in 0s movement;
+}
+
+@keyframes movement {
+  from {
+    transform: translateY(50%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 .close {
