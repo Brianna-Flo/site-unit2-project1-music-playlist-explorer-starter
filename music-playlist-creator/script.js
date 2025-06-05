@@ -31,6 +31,7 @@ function openModal(playlist) {
   document.getElementById("playlist-songs").innerHTML = ``;
   loadSongs(playlist.songs);
   modal.style.display = "block";
+  document.querySelector("body").toggleClass('stopScroll');
 }
 
 span.onclick = function () {
@@ -81,7 +82,7 @@ const createCard = (playlist) => {
         <h3 class="no-space">${playlist.playlist_name}</h3>
         <p class="no-space">${playlist.playlist_author}</p>
         <section class="likes no-space">
-            <img class="outline" id="heart" />
+            <button><i class="fa-regular fa-heart"></i></button>
             <p id="like-count">likes</p>
         </section>
     `;

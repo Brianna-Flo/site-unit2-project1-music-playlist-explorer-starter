@@ -95,5 +95,17 @@ let playlists = [
 			{ "song_title": "Coffee", "song_artist": "Beabadoobee", "album": "Loveworm", "time": "1:50", "song_img": "assets/img/song.png" },
 			{ "song_title": "Banana Pancakes", "song_artist": "Jack Johnson", "album": "In Between Dreams", "time": "3:12", "song_img": "assets/img/song.png" }
 		]
+    },
+	{
+        "playlistID": 8,
+        "playlist_name": "Coffee",
+        "playlist_author": "Laufey",
+        "playlist_art": "assets/img/playlist.png",
+        "songs": [
+			{ "song_title": "Valentine", "song_artist": "Laufey", "album": "Everything I Know About Love", "time": "3:41", "song_img": "assets/img/song.png" },
+			{ "song_title": "Let You Break My Heart Again", "song_artist": "Laufey", "album": "Typical of Me", "time": "2:48", "song_img": "assets/img/song.png" },
+			{ "song_title": "Coffee", "song_artist": "Beabadoobee", "album": "Loveworm", "time": "1:50", "song_img": "assets/img/song.png" },
+			{ "song_title": "Banana Pancakes", "song_artist": "Jack Johnson", "album": "In Between Dreams", "time": "3:12", "song_img": "assets/img/song.png" }
+		]
     }
 ];

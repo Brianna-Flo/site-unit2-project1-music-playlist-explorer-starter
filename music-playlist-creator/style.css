@@ -15,6 +15,10 @@ header {
   color: #000000;
 }
 
+main {
+  margin-bottom: 1%;
+}
+
 footer {
   padding: 5px;
   /*fixes the footer to the bottom of the page*/
@@ -34,6 +38,7 @@ header, footer {
   margin: 20px;
   padding: 0px;
   border-radius: 10px;
+  max-width: 20%;
 }
 
 .card:hover {
@@ -43,7 +48,7 @@ header, footer {
 
 .card-row {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 
 }
 
@@ -87,6 +92,7 @@ header, footer {
   padding: 20px 100px;
   border: 1px solid #888;
   width: 80%;
+  /* height: 60%; */
   animation: 0.3s ease-in 0s movement;
 }
 
@@ -115,8 +121,12 @@ header, footer {
 
 /* Modal Styling */
 #playlist-modal-photo {
-  width: 150px;
-  height: 100px;
+  /* width: 150px;
+  height: 100px; */
+  width: 20%;
+  height: 0%;
+  aspect-ratio: 1/1;
+
   margin-right: 20px;
 }
 
@@ -126,8 +136,9 @@ header, footer {
 }
 
 .song-img {
-  width: 75px;
-  height: 50px;
+  width: 10%;
+  height: auto;
+  aspect-ratio: 1/1;
   margin: 10px;
   margin-right: 20px;
 }
@@ -151,4 +162,10 @@ header, footer {
 
 .outline {
   border: 2px solid #033F63;
+}
+
+#playlist-songs {
+  overflow: scroll;
+  height: 60%;
+  margin-bottom: 1%;
 }
