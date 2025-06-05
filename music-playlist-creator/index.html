@@ -23,7 +23,7 @@
       <!--should we use class or id for each playlist card?-->
       <section class="playlist-cards">
         <section class="card-row">
-          <section class="card outline">
+          <section onclick="openModal()" class="card outline">
             <img class="outline" id="playlist-photo" />
             <h3 class="no-space">Playlist Title</h3>
             <p class="no-space">Creator Name</p>
@@ -32,7 +32,7 @@
               <p id="like-count">likes</p>
             </section>
           </section>
-          <section class="card outline">
+          <section onclick="openModal()" class="card outline">
             <img class="outline" id="playlist-photo" />
             <h3 class="no-space">Playlist Title</h3>
             <p class="no-space">Creator Name</p>
@@ -41,7 +41,7 @@
               <p id="like-count">likes</p>
             </section>
           </section>
-          <section class="card outline">
+          <section onclick="openModal()" class="card outline">
             <img class="outline" id="playlist-photo" />
             <h3 class="no-space">Playlist Title</h3>
             <p class="no-space">Creator Name</p>
@@ -50,7 +50,7 @@
               <p id="like-count">likes</p>
             </section>
           </section>
-          <section class="card outline">
+          <section onclick="openModal()" class="card outline">
             <img class="outline" id="playlist-photo" />
             <h3 class="no-space">Playlist Title</h3>
             <p class="no-space">Creator Name</p>
@@ -62,7 +62,7 @@
         </section>
 
         <section class="card-row">
-          <section class="card outline">
+          <section onclick="openModal()" class="card outline">
             <img class="outline" id="playlist-photo" />
             <h3 class="no-space">Playlist Title</h3>
             <p class="no-space">Creator Name</p>
@@ -71,7 +71,7 @@
               <p id="like-count">likes</p>
             </section>
           </section>
-          <section class="card outline">
+          <section onclick="openModal()" class="card outline">
             <img class="outline" id="playlist-photo" />
             <h3 class="no-space">Playlist Title</h3>
             <p class="no-space">Creator Name</p>
@@ -80,7 +80,7 @@
               <p id="like-count">likes</p>
             </section>
           </section>
-          <section class="card outline">
+          <section onclick="openModal()" class="card outline">
             <img class="outline" id="playlist-photo" />
             <h3 class="no-space">Playlist Title</h3>
             <p class="no-space">Creator Name</p>
@@ -89,7 +89,7 @@
               <p id="like-count">likes</p>
             </section>
           </section>
-          <section class="card outline">
+          <section onclick="openModal()" class="card outline">
             <img class="outline" id="playlist-photo" />
             <h3 class="no-space">Playlist Title</h3>
             <p class="no-space">Creator Name</p>
@@ -99,14 +99,25 @@
             </section>
           </section>
         </section>
-
-
     </main>
 
+
+    <!-- Modal Structure
+    <div id="festivalModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1 id="festivalName"></h1>
+            <img id="festivalImage" src="" alt="Festival Image">
+            <p id="festivalDates"></p>
+            <p id="festivalLocation"></p>
+            <div id="artistLineup"></div>
+        </div>
+    </div> -->
+
     <!-- Modal Structure -->
-    <div id="playlist-modal" class="modal">
+    <div id="playlistModal" class="modal">
       <div class="modal-content">
-        <!-- <span class="close">&times;</span> -->
+        <span class="close">&times;</span>
         <section class="playlist-info">
           <img class="outline" id="playlist-modal-photo" />
           <div id="playlist-info">
