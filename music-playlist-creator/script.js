@@ -98,13 +98,13 @@ const createSong = (song) => {
   const songElement = document.createElement("div");
   songElement.className = "song outline";
   songElement.innerHTML = `
-    <img class="song-img outline" />
+    <img class="song-img outline" src='${song.song_img}'/>
     <div class="song-info">
         <h4 class="no-space">${song.song_title}</h4>
         <p class="no-space">${song.song_artist}</p>
         <p class="no-space">${song.album}</p>
     </div>
-    <p class="song-time">0:00</p>
+    <p class="song-time">${song.time}</p>
     `;
   return songElement;
 };
