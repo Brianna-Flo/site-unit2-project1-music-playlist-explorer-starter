@@ -180,3 +180,15 @@ header, footer {
   transform: scale(1.5);
   color: #ED254E;
 }
+
+#shuffle-btn {
+  background-color: #93E1D8;
+  width: 20%;
+  aspect-ratio: 3/1;
+  font-size: 15px;
+}
+
+#shuffle-btn:hover {
+  background-color: #48d0c0;
+  transform: scale(1.1);
+}
