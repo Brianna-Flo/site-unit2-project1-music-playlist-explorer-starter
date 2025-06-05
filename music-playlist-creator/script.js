@@ -68,6 +68,7 @@ const loadPlaylists = () => {
     row.appendChild(newCard);
     newCard.querySelector("#like-btn").addEventListener('click', (event) => {
       event.stopPropagation();
+      likePlaylist(newCard, playlist);
     });
     count++;
   }
@@ -88,8 +89,8 @@ const createCard = (playlist) => {
         <h3 class="no-space">${playlist.playlist_name}</h3>
         <p class="no-space">${playlist.playlist_author}</p>
         <section class="likes no-space">
-            <i id="like-btn" class="fa-regular fa-heart"></i>
-            <p id="like-cnt">likes</p>
+            <i id="like-btn" class="fa-regular fa-heart" data-liked="false"></i>
+            <p id="like-cnt">${playlist.likes}</p>
         </section>
     `;
     // let variable = document.querySelector("#like-btn").addEventListener("click", ()=>{
@@ -128,14 +129,19 @@ const loadSongs = (songs) => {
   }
 };
 
-
-
-// like button click
-// function likePlaylist() {
-// document.addEventListener("click", () => {
-//   querySelector(".likes").innerHTML = `
-//     <p onclick="likePlaylist()" id="like-btn"><i class="fa-solid fa-heart"></i></p>
-//     <p id="like-cnt">likes</p>
-//   `;
-// });
-// }
+function likePlaylist (newCard, playlist) {
+  const isLiked = newCard.getAttribute('data-liked') === 'true';
+  if (!isLiked) {
+    newCard.querySelector("#like-btn").className = "fa-solid fa-heart";
+    newCard.querySelector("#like-btn").style.color= "#ED254E";
+    newCard.setAttribute('data-liked', 'true');
+    playlist.likes++;
+    newCard.querySelector('#like-cnt').innerText = `${playlist.likes}`;
+  } else {
+    newCard.querySelector("#like-btn").className = "fa-regular fa-heart";
+    newCard.querySelector("#like-btn").style.color= "#000000";
+    newCard.setAttribute('data-liked', 'false');
+    playlist.likes--;
+    newCard.querySelector('#like-cnt').innerText = `${playlist.likes}`;
+  }
+}
