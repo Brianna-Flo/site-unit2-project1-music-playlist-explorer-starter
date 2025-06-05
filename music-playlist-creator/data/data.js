@@ -4,28 +4,40 @@ let playlists = [
         "playlist_name": "Lo-Fi Chill",
         "playlist_author": "Various Artists",
         "playlist_art": "assets/img/playlist.png",
-        "songs": 24
+        "songs": [
+			{ "song_title": "Stereo Madness", "song_artist": "Forever Bound", "album": "Geometry Dash OST"},
+			{ "song_title": "Ji-eun's Sunset", "song_artist": "City Girl", "album": "Neon Impasse"},
+		]
     },
     {
         "playlistID": 4,
         "playlist_name": "Disney Jams",
         "playlist_author": "Walt Disney",
         "playlist_art": "assets/img/playlist.png",
-        "songs": 15
+        "songs": [
+			{ "song_title": "Stereo Madness", "song_artist": "Forever Bound", "album": "Geometry Dash OST"},
+			{ "song_title": "Ji-eun's Sunset", "song_artist": "City Girl", "album": "Neon Impasse"},
+		]
     },
     {
         "playlistID": 5,
         "playlist_name": "Morning Energy",
         "playlist_author": "George Michael",
         "playlist_art": "assets/img/playlist.png",
-        "songs": 18
+        "songs": [
+			{ "song_title": "Stereo Madness", "song_artist": "Forever Bound", "album": "Geometry Dash OST"},
+			{ "song_title": "Ji-eun's Sunset", "song_artist": "City Girl", "album": "Neon Impasse"},
+		]
     },
     {
         "playlistID": 6,
         "playlist_name": "Jazz Essentials",
         "playlist_author": "Chet Baker",
         "playlist_art": "assets/img/playlist.png",
-        "songs": 10
+        "songs": [
+			{ "song_title": "Stereo Madness", "song_artist": "Forever Bound", "album": "Geometry Dash OST"},
+			{ "song_title": "Ji-eun's Sunset", "song_artist": "City Girl", "album": "Neon Impasse"},
+		]
     },
     {
         "playlistID": 7,
