@@ -31,7 +31,7 @@ function openModal(playlist) {
   document.getElementById("playlist-songs").innerHTML = ``;
   loadSongs(playlist.songs);
   modal.style.display = "block";
-  document.querySelector("body").toggleClass('stopScroll');
+  // document.querySelector("body").toggleClass('stopScroll');
 }
 
 span.onclick = function () {
@@ -66,6 +66,9 @@ const loadPlaylists = () => {
     let newCard = createCard(playlist);
     // add card to container
     row.appendChild(newCard);
+    newCard.querySelector("#like-btn").addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
     count++;
   }
 };
@@ -74,18 +77,25 @@ const loadPlaylists = () => {
 const createCard = (playlist) => {
   const playlistElement = document.createElement("section");
   playlistElement.className = "card outline";
-  playlistElement.onclick = function () {
+  // playlistElement.onclick = function () {
+  //   openModal(playlist);
+  // };
+  playlistElement.addEventListener('click', () => {
     openModal(playlist);
-  };
+  });
   playlistElement.innerHTML = `
         <img class="outline" id="playlist-photo" src='${playlist.playlist_art}'/>
         <h3 class="no-space">${playlist.playlist_name}</h3>
         <p class="no-space">${playlist.playlist_author}</p>
         <section class="likes no-space">
-            <button><i class="fa-regular fa-heart"></i></button>
-            <p id="like-count">likes</p>
+            <i id="like-btn" class="fa-regular fa-heart"></i>
+            <p id="like-cnt">likes</p>
         </section>
     `;
+    // let variable = document.querySelector("#like-btn").addEventListener("click", ()=>{
+    //   return;
+    // });
+    // console.log(variable);
   return playlistElement;
 };
 
@@ -117,3 +127,15 @@ const loadSongs = (songs) => {
     container.appendChild(newSong);
   }
 };
+
+
+
+// like button click
+// function likePlaylist() {
+// document.addEventListener("click", () => {
+//   querySelector(".likes").innerHTML = `
+//     <p onclick="likePlaylist()" id="like-btn"><i class="fa-solid fa-heart"></i></p>
+//     <p id="like-cnt">likes</p>
+//   `;
+// });
+// }

@@ -169,3 +169,14 @@ header, footer {
   height: 60%;
   margin-bottom: 1%;
 }
+
+#like-btn {
+  /* background-color: transparent;
+  border: none; */
+  margin: 15%;
+}
+
+#like-btn:hover {
+  transform: scale(1.5);
+  color: #ED254E;
+}
