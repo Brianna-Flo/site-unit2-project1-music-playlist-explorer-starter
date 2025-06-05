@@ -29,6 +29,9 @@ function openModal(playlist) {
   document.getElementById("playlist-title").innerText = playlist.playlist_name;
   document.getElementById("creator-name").innerText = playlist.playlist_author;
   document.getElementById("playlist-songs").innerHTML = ``;
+  document.getElementById("shuffle-btn").addEventListener('click', () => {
+    shuffle(playlist.songs);
+  });
   loadSongs(playlist.songs);
   modal.style.display = "block";
   // document.querySelector("body").toggleClass('stopScroll');
@@ -78,9 +81,6 @@ const loadPlaylists = () => {
 const createCard = (playlist) => {
   const playlistElement = document.createElement("section");
   playlistElement.className = "card outline";
-  // playlistElement.onclick = function () {
-  //   openModal(playlist);
-  // };
   playlistElement.addEventListener('click', () => {
     openModal(playlist);
   });
@@ -93,10 +93,6 @@ const createCard = (playlist) => {
             <p id="like-cnt">${playlist.likes}</p>
         </section>
     `;
-    // let variable = document.querySelector("#like-btn").addEventListener("click", ()=>{
-    //   return;
-    // });
-    // console.log(variable);
   return playlistElement;
 };
 
@@ -144,4 +140,16 @@ function likePlaylist (newCard, playlist) {
     playlist.likes--;
     newCard.querySelector('#like-cnt').innerText = `${playlist.likes}`;
   }
+}
+
+function shuffle (songList) {
+  let curr = songList.length;
+  while (curr != 0) {
+    let rand = Math.floor(Math.random() * curr);
+    curr--;
+
+    [songList[curr], songList[rand]] = [songList[rand], songList[curr]];
+  }
+  document.getElementById("playlist-songs").innerHTML = ``;
+  loadSongs(songList);
 }
