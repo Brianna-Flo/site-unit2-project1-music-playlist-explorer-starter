@@ -8,11 +8,35 @@ body {
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   font-size: 40px;
   /*issue fixed: color reaches to the start of the page*/
-  padding-left: 20px;
+  padding: 0 20px;
   color: #000000;
+}
+
+nav {
+  color: #000000;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: end;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 30px;
+  transition: color 0.3s ease-in;
+}
+
+nav ul li a:hover {
+  color: #DDFFF7;
 }
 
 main {

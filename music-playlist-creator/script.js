@@ -153,3 +153,11 @@ function shuffle (songList) {
   document.getElementById("playlist-songs").innerHTML = ``;
   loadSongs(songList);
 }
+
+
+
+// selected a playlist to feature
+const selectFeatured = () => {
+  let rand = Math.floor(Math.random() * songList.length);
+  return playlists[rand];
+}
