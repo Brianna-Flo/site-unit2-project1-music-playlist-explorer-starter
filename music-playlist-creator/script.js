@@ -1,4 +1,3 @@
-// iterate over data.playlists array
 const loadPlaylists = () => {
   if (playlists.length === 0) {
     const mainBody = document.querySelector("main");
@@ -6,25 +5,12 @@ const loadPlaylists = () => {
             <p>No playlists have been added</p>
         `;
   }
-  let count = 0;
   const container = document.getElementById("playlist-cards");
-  let row;
   for (const playlist of playlists) {
-    if (count % 4 === 0) {
-      row = document.createElement("section");
-      row.className = "card-row";
-      container.appendChild(row);
-    }
     // create a new card
     let newCard = createCard(playlist);
     // add card to container
-    row.appendChild(newCard);
-    count++;
-  }
-  if (count % 4 === 0) {
-    row = document.createElement("section");
-    row.className = "card-row";
-    container.appendChild(row);
+    container.appendChild(newCard);
   }
   let newPlaylist = document.createElement("section");
   newPlaylist.className = "new-playlist card outline";
@@ -35,8 +21,9 @@ const loadPlaylists = () => {
     <i class="fa-regular fa-plus"></i>
     <h3>Create new playlist</h3>
   `;
-  row.appendChild(newPlaylist);
+  container.appendChild(newPlaylist);
 };
+
 
 // create card for each playlist
 const createCard = (playlist) => {
@@ -49,23 +36,24 @@ const createCard = (playlist) => {
         <img class="outline" id="playlist-photo" src='${playlist.playlist_art}'/>
         <h3 class="no-space">${playlist.playlist_name}</h3>
         <p class="no-space">${playlist.playlist_author}</p>
-        <section class="likes no-space">
-            <i id="like-btn" class="fa-regular fa-heart" data-liked="false"></i>
-            <p id="like-cnt">${playlist.likes}</p>
+        <section class="card-btns">
+          <section class="likes no-space">
+              <i id="like-btn" class="fa-regular fa-heart" data-liked="false"></i>
+              <p id="like-cnt">${playlist.likes}</p>
+          </section>
+          <i id="edit-btn" class="fa-solid fa-pen-to-square"></i>
         </section>
     `;
   playlistElement.querySelector("#like-btn").addEventListener('click', (event) => {
       event.stopPropagation();
       likePlaylist(playlistElement, playlist);
   });
+  playlistElement.querySelector("#edit-btn").addEventListener('click', (event) => {
+      event.stopPropagation();
+      editPlaylist(playlistElement, playlist);
+  });
   return playlistElement;
 };
-
-// // execute only once all content loaded
-// document.addEventListener("DOMContentLoaded", () => {
-//   // we use an arrow function so we can execute multiple functions
-//   loadPlaylists();
-// });
 
 const createSong = (song) => {
   const songElement = document.createElement("div");

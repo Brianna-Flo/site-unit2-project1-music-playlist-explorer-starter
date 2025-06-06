@@ -69,10 +69,9 @@ header, footer {
   box-shadow: 0.5em 0.5em 0.5em #93E1D8;
 }
 
-.card-row {
+#playlist-cards {
   display: flex;
-  /* justify-content: space-around; */
-
+  flex-wrap: wrap;
 }
 
 #playlist-photo {
@@ -86,13 +85,29 @@ header, footer {
 .likes {
   display: flex;
   align-items: center;
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 #heart {
   width: 25px;
   height: 25px;
   margin-right: 5px;
+}
+
+.card-btns{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* for edit button */
+.card-btns i{
+  margin-right: 5px;
+}
+
+.card-btns i:hover{
+  transform: scale(1.5);
 }
 
 /* CSS for Modal */

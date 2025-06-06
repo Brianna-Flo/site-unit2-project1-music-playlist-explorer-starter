@@ -8,7 +8,7 @@ function openModal(playlist) {
   document.getElementById("playlist-title").innerText = playlist.playlist_name;
   document.getElementById("creator-name").innerText = playlist.playlist_author;
   document.getElementById("playlist-songs").innerHTML = ``;
-  document.getElementById("shuffle-btn").addEventListener('click', () => {
+  document.getElementById("shuffle-btn").addEventListener("click", () => {
     shuffle(playlist.songs);
   });
   loadSongs(playlist.songs);
@@ -36,52 +36,77 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPlaylists();
 });
 
-
-
-
-const createModal = document.getElementById('create-modal');
+const createModal = document.getElementById("create-modal");
 
 // open up modal for playlist form
 function createNewPlaylist() {
   document.querySelector("body").className = "opened";
   createModal.style.display = "block";
   const playlistForm = document.querySelector("#playlist-form");
-  playlistForm.addEventListener('submit', handleCreatePlaylist);
+  playlistForm.addEventListener("submit", handleCreatePlaylist);
 }
 
-function handleCreatePlaylist (event) {
-    // we do this because we want to customize the behavior that the form submit button does
-    event.preventDefault();  // otherwise page will refresh (we dont want that)
-
-    const title = document.querySelector('#playlistTitle').value;
-    const author = document.querySelector('#playlistAuthor').value;
-    // const songTitle = document.querySelector('#review-text').value;
-
-    const song = [{
-        "song_title": document.querySelector('#songTitle').value,
-        "song_artist": document.querySelector('#songArtist').value,
-        "album": document.querySelector('#songAlbum').value, 
-        "time": document.querySelector('#songDuration').value, 
-        "song_img": "assets/img/song.png",
-    }];
-
-    const playlist = {
-        "playlistID": 1,
-        "playlist_name": document.querySelector('#playlistTitle').value,
-        "playlist_author": document.querySelector('#playlistAuthor').value,
-        "playlist_art": "assets/img/playlist.png",
-        "likes": 0,
-        "songs": song
-    };
-
-    // call create review element to create review element with this submitted review
-    const newPlaylist = createCard(playlist);
-    // and add this to the reviews container
-    const playlistCards = document.querySelector('#playlist-cards');
-    const lastRow = playlistCards.lastChild;
-    // dont call appendChild, this time we want to append to the top (most recent reviews shown first)
-    lastRow.insertBefore(newPlaylist, lastRow.lastChild);  // first child is the first item in the reviews list
-    event.target.reset();  // resets the form when you submit
-    document.querySelector("body").className = "";
-    createModal.style.display = "none";
+function handleCreatePlaylist(event) {
+  // we do this because we want to customize the behavior that the form submit button does
+  event.preventDefault(); // otherwise page will refresh (we dont want that)
+  const newPlaylist = playlistFromForm();
+  // and add this to the reviews container
+  const playlistCards = document.querySelector("#playlist-cards");
+  // dont call appendChild, this time we want to append to the top (most recent reviews shown first)
+  playlistCards.insertBefore(newPlaylist, playlistCards.lastChild); // first child is the first item in the reviews list
+  event.target.reset(); // resets the form when you submit
+  document.querySelector("body").className = "";
+  createModal.style.display = "none";
 }
+
+const playlistFromForm = () => {
+  const song = [
+    {
+      song_title: document.querySelector("#songTitle").value,
+      song_artist: document.querySelector("#songArtist").value,
+      album: document.querySelector("#songAlbum").value,
+      time: document.querySelector("#songDuration").value,
+      song_img: "assets/img/song.png",
+    },
+  ];
+
+  const playlist = {
+    playlistID: 1,
+    playlist_name: document.querySelector("#playlistTitle").value,
+    playlist_author: document.querySelector("#playlistAuthor").value,
+    playlist_art: "assets/img/playlist.png",
+    likes: 0,
+    songs: song,
+  };
+  // call create review element to create review element with this submitted review
+  return createCard(playlist);
+};
+
+// function editPlaylist(playlistElement, playlist) {
+//   document.querySelector("body").className = "opened";
+//   createModal.style.display = "block";
+//   document.querySelector("#playlistTitle").value = playlist.playlist_name;
+//   document.querySelector("#playlistAuthor").value = playlist.playlist_author;
+//   document.querySelector("#songTitle").value = playlist.songs[0].song_title;
+//   document.querySelector("#songArtist").value = playlist.songs[0].song_artist;
+//   document.querySelector("#songAlbum").value = playlist.songs[0].album;
+//   document.querySelector("#songDuration").value = playlist.songs[0].time;
+
+//   const playlistForm = document.querySelector("#playlist-form");
+//   //   handleUpdatePlaylist(playlistForm, playlistElement);
+//   playlistForm.addEventListener("submit", handleUpdatePlaylist);
+
+//   //   event.preventDefault();
+// }
+
+// function handleUpdatePlaylist(event) {
+//   //   we do this because we want to customize the behavior that the form submit button does
+//   event.preventDefault();
+
+//   const newPlaylist = playlistFromForm();
+//   const parentCont = document.querySelector("#playlist-cards");
+//   parentCont.replaceChild(newPlaylist, playlistElement);
+//   parentCont.remove(playlistElement);
+//   document.querySelector("body").className = "";
+//   createModal.style.display = "none";
+// }
