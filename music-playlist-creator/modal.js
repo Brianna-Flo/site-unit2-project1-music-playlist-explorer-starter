@@ -31,9 +31,25 @@ window.onclick = function (event) {
     createModal.style.display = "none";
     document.querySelector("body").className = "";
     const songsCont = document.querySelector('#songs-input')
-    while (songsCont.children.length > 1) {
-        songsCont.removeChild(songsCont.lastChild);
-    }
+    // while (songsCont.children.length > 1) {
+    //     songsCont.removeChild(songsCont.lastChild);
+    // }
+    songsCont.innerHTML = `
+        <div id="added-song">
+            <div>
+            <label for="songTitle">Song Title:</label>
+            <input type="text" id="songTitle" name="songTitle" required />
+            <label for="songArtist">Song Artist:</label>
+            <input type="text" id="songArtist" name="songArtist" required />
+            </div>
+            <div>
+            <label for="songAlbum">Song Album:</label>
+            <input type="text" id="songAlbum" name="songAlbum" required />
+            <label for="songDuration">Song Duration:</label>
+            <input type="text" id="songDuration" name="songDuration" required />
+            </div>
+        </div>
+    `
   }
 };
 
@@ -68,6 +84,7 @@ function createNewPlaylist() {
 }
 
 const createSongInput = (songsCont) => {
+    console.log("called!");
     const newSong = document.createElement("div");
     newSong.id = "added-song";
     newSong.innerHTML = `
@@ -97,9 +114,25 @@ function handleCreatePlaylist(event) {
   playlistCards.insertBefore(newPlaylist, playlistCards.lastChild); // first child is the first item in the reviews list
   event.target.reset(); // resets the form when you submit
   const songsCont = document.querySelector('#songs-input');
-  while (songsCont.children.length > 1) {
-        songsCont.removeChild(songsCont.lastChild);
-  }
+//   while (songsCont.children.length > 1) {
+//         songsCont.removeChild(songsCont.lastChild);
+//   }
+    songsCont.innerHTML = `
+        <div id="added-song">
+            <div>
+            <label for="songTitle">Song Title:</label>
+            <input type="text" id="songTitle" name="songTitle" required />
+            <label for="songArtist">Song Artist:</label>
+            <input type="text" id="songArtist" name="songArtist" required />
+            </div>
+            <div>
+            <label for="songAlbum">Song Album:</label>
+            <input type="text" id="songAlbum" name="songAlbum" required />
+            <label for="songDuration">Song Duration:</label>
+            <input type="text" id="songDuration" name="songDuration" required />
+            </div>
+        </div>
+    `
   document.querySelector("body").className = "";
   createModal.style.display = "none";
 }
