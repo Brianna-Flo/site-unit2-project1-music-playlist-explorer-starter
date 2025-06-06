@@ -206,7 +206,6 @@ function filterPlaylists (event) {
   const searchRequest = document.querySelector("#search").value;
   
   const filteredList = playlists.filter((playlist) => {
-    // return (playlist.playlist_name.substring(0, searchRequest.length).toLowerCase === searchRequest.toLowerCase) || (playlist.playlist_author.substring(0, searchRequest.length).toLowerCase === searchRequest.toLowerCase);
     return playlist.playlist_name.toLowerCase().includes(searchRequest.toLowerCase()) || playlist.playlist_author.toLowerCase().includes(searchRequest.toLowerCase());
   });
   document.getElementById("playlist-cards").innerHTML = ``;

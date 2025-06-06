@@ -16,7 +16,7 @@ header {
 
 nav {
   color: #000000;
-  height: 60px;
+  height: 100px;
 }
 
 nav ul {
@@ -57,12 +57,12 @@ header, footer {
 .card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   margin: 20px;
   padding: 0px;
   border-radius: 10px;
-  max-width: 20%;
+  max-width: 15%;
 }
 
 .card:hover {
@@ -86,7 +86,6 @@ header, footer {
 .likes {
   display: flex;
   align-items: center;
-  /* padding: 5px; */
 }
 
 #heart {
@@ -126,11 +125,14 @@ header, footer {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  /* margin: 15% auto; */
+  margin: auto;
+  margin-top: 6%;
   padding: 20px 100px;
   border: 1px solid #888;
-  width: 80%;
+  width: 40%;
   max-height: 70%;
+  /* max-height: 50%; */
   overflow: hidden;
   display:flex;
   flex-direction: column;
@@ -251,7 +253,7 @@ body.opened {
   width:100%;
 }
 #featured-img {
-  width: 100%;
+  width: 70%;
   aspect-ratio: 1 / 1;
   border-radius: 20px;
 }
@@ -313,11 +315,24 @@ label {
 }
 
 .right {
-  margin: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 0px;
   justify-content: center;
 }
 
 /* search bar styling */
+#search {
+  width: 15em;
+  height: 2em;
+  border-radius: 20px;
+  outline-style: none;
+}
+
+.search-btns {
+  background: none;
+  outline: none;
+  aspect-ratio: 1/1;
+  height: 2em;
+}
