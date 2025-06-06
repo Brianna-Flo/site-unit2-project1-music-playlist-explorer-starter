@@ -230,7 +230,7 @@ body.opened {
   background-color: #93E1D8;
   width: 20%;
   aspect-ratio: 3/1;
-  font-size: 15px;
+  font-size: 150%;
 }
 
 #shuffle-btn:hover {
@@ -245,6 +245,7 @@ body.opened {
   grid-template-columns: 1fr 1fr;
   gap: 1%;
   margin: 5%;
+  aspect-ratio: 2/1;
 }
 #featured-playlist {
   width:100%;
@@ -266,8 +267,8 @@ body.opened {
 }
 
 .featured-songs {
-  max-height: 50%;
-  overflow: auto;
+  max-height: 100%;
+  overflow: scroll;
 }
 
 /* Styling for new playlist */

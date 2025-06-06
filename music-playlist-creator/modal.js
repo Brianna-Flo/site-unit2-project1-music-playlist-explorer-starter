@@ -30,10 +30,14 @@ window.onclick = function (event) {
   } else if (event.target == createModal) {
     createModal.style.display = "none";
     document.querySelector("body").className = "";
-    const songsCont = document.querySelector('#songs-input')
+    const songsCont = document.querySelector('#songs-input');
+
+    // look for added songs
+
     // while (songsCont.children.length > 1) {
     //     songsCont.removeChild(songsCont.lastChild);
     // }
+    console.log("first", document.querySelector("#songs-input"));
     songsCont.innerHTML = `
         <div id="added-song">
             <div>
@@ -50,6 +54,7 @@ window.onclick = function (event) {
             </div>
         </div>
     `
+    console.log("second", document.querySelector("#songs-input"));
   }
 };
 
@@ -72,19 +77,13 @@ function createNewPlaylist() {
   document.querySelector("#songAlbum").value = "";
   document.querySelector("#songDuration").value = "";
 
-  modalButtonFunctionality();
-//   const playlistForm = document.querySelector("#playlist-form");
-//   const addSong = document.querySelector("#add-song-btn");
-//   const songsCont = document.querySelector('#songs-input');
-//   addSong.addEventListener("click", () => {
-//     createSongInput(songsCont);
-//   });
-
-//   playlistForm.addEventListener("submit", handleCreatePlaylist);
+//   modalButtonFunctionality();
+  const playlistForm = document.querySelector("#playlist-form");
+  addSongFunctionality();
+  playlistForm.addEventListener("submit", handleCreatePlaylist);
 }
 
 const createSongInput = (songsCont) => {
-    console.log("called!");
     const newSong = document.createElement("div");
     newSong.id = "added-song";
     newSong.innerHTML = `
@@ -183,20 +182,18 @@ function editPlaylist(playlistElement, playlist) {
     newSong.querySelector("#songAlbum").value = playlist.songs[i].album;
     newSong.querySelector("#songDuration").value = playlist.songs[i].time;
   }
-  modalButtonFunctionality();
-//   const playlistForm = document.querySelector("#playlist-form");
-//   playlistForm.addEventListener("submit", handleUpdatePlaylist);
+  const playlistForm = document.querySelector("#playlist-form");
+  addSongFunctionality();
+  playlistForm.addEventListener("submit", handleUpdatePlaylist);
 }
 
-function modalButtonFunctionality() {
+function addSongFunctionality() {
   const playlistForm = document.querySelector("#playlist-form");
   const addSong = document.querySelector("#add-song-btn");
   const songsCont = document.querySelector('#songs-input');
   addSong.addEventListener("click", () => {
     createSongInput(songsCont);
   });
-
-  playlistForm.addEventListener("submit", handleCreatePlaylist);
 }
 
 function handleUpdatePlaylist(event) {
@@ -206,6 +203,8 @@ function handleUpdatePlaylist(event) {
   if (playlistEdited !== null) {
     const newPlaylist = playlistFromForm();
     const parentCont = document.querySelector("#playlist-cards");
+    // parentCont.insertBefore(newPlaylist, playlistEdited);
+    // parentCont.removeChild(playlistEdited);
     parentCont.replaceChild(newPlaylist, playlistEdited);
   }
   document.querySelector("body").className = "";
