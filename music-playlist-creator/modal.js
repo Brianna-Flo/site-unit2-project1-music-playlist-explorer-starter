@@ -82,4 +82,6 @@ function handleCreatePlaylist (event) {
     // dont call appendChild, this time we want to append to the top (most recent reviews shown first)
     lastRow.insertBefore(newPlaylist, lastRow.lastChild);  // first child is the first item in the reviews list
     event.target.reset();  // resets the form when you submit
+    document.querySelector("body").className = "";
+    createModal.style.display = "none";
 }
