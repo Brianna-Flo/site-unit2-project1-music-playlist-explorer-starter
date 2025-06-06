@@ -41,7 +41,10 @@ const createCard = (playlist) => {
               <i id="like-btn" class="fa-regular fa-heart" data-liked="false"></i>
               <p id="like-cnt">${playlist.likes}</p>
           </section>
-          <i id="edit-btn" class="fa-solid fa-pen-to-square"></i>
+          <div>
+            <i id="edit-btn" class="fa-solid fa-pen-to-square"></i>
+            <i id="delete-btn" class="fa-solid fa-trash"></i>
+          </div>
         </section>
     `;
   playlistElement.querySelector("#like-btn").addEventListener('click', (event) => {
@@ -51,6 +54,10 @@ const createCard = (playlist) => {
   playlistElement.querySelector("#edit-btn").addEventListener('click', (event) => {
       event.stopPropagation();
       editPlaylist(playlistElement, playlist);
+  });
+  playlistElement.querySelector("#delete-btn").addEventListener('click', (event) => {
+      event.stopPropagation();
+      deletePlaylist(playlistElement);
   });
   return playlistElement;
 };
@@ -105,4 +112,9 @@ function shuffle (songList) {
   }
   document.getElementById("playlist-songs").innerHTML = ``;
   loadSongs(songList);
+}
+
+function deletePlaylist(playlistElement) {
+  const container = document.querySelector("#playlist-cards");
+  container.removeChild(playlistElement);
 }
