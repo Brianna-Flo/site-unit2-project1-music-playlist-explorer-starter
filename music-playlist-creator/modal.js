@@ -82,31 +82,32 @@ const playlistFromForm = () => {
   return createCard(playlist);
 };
 
-// function editPlaylist(playlistElement, playlist) {
-//   document.querySelector("body").className = "opened";
-//   createModal.style.display = "block";
-//   document.querySelector("#playlistTitle").value = playlist.playlist_name;
-//   document.querySelector("#playlistAuthor").value = playlist.playlist_author;
-//   document.querySelector("#songTitle").value = playlist.songs[0].song_title;
-//   document.querySelector("#songArtist").value = playlist.songs[0].song_artist;
-//   document.querySelector("#songAlbum").value = playlist.songs[0].album;
-//   document.querySelector("#songDuration").value = playlist.songs[0].time;
 
-//   const playlistForm = document.querySelector("#playlist-form");
-//   //   handleUpdatePlaylist(playlistForm, playlistElement);
-//   playlistForm.addEventListener("submit", handleUpdatePlaylist);
 
-//   //   event.preventDefault();
-// }
+let playlistEdited = null;
+function editPlaylist(playlistElement, playlist) {
+  playlistEdited = playlistElement
+  document.querySelector("body").className = "opened";
+  createModal.style.display = "block";
+  document.querySelector("#playlistTitle").value = playlist.playlist_name;
+  document.querySelector("#playlistAuthor").value = playlist.playlist_author;
+  document.querySelector("#songTitle").value = playlist.songs[0].song_title;
+  document.querySelector("#songArtist").value = playlist.songs[0].song_artist;
+  document.querySelector("#songAlbum").value = playlist.songs[0].album;
+  document.querySelector("#songDuration").value = playlist.songs[0].time;
+  
+  const playlistForm = document.querySelector("#playlist-form");
+  playlistForm.addEventListener("submit", handleUpdatePlaylist);
+}
 
-// function handleUpdatePlaylist(event) {
-//   //   we do this because we want to customize the behavior that the form submit button does
-//   event.preventDefault();
-
-//   const newPlaylist = playlistFromForm();
-//   const parentCont = document.querySelector("#playlist-cards");
-//   parentCont.replaceChild(newPlaylist, playlistElement);
-//   parentCont.remove(playlistElement);
-//   document.querySelector("body").className = "";
-//   createModal.style.display = "none";
-// }
+function handleUpdatePlaylist(event) {
+  //   we do this because we want to customize the behavior that the form submit button does
+  event.preventDefault();
+  if (playlistEdited !== null) {
+    const newPlaylist = playlistFromForm();
+    const parentCont = document.querySelector("#playlist-cards");
+    parentCont.replaceChild(newPlaylist, playlistEdited);
+  }
+  document.querySelector("body").className = "";
+  createModal.style.display = "none";
+}

@@ -121,7 +121,6 @@ header, footer {
   height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.4);
-
 }
 
 .modal-content {
@@ -151,6 +150,7 @@ header, footer {
    float: right;
    font-size: 28px;
    font-weight: bold;
+   text-align: end;
 }
 .close:hover,
 .close:focus {
