@@ -1,52 +1,29 @@
 // // JavaScript for Opening and Closing the Modal
-// const modal = document.getElementById("playlist-modal");
+// const modal = document.getElementById("playlistModal");
 // const span = document.getElementsByClassName("close")[0];
 
 // function openModal(playlist) {
-//    document.getElementById('playlist-title').innerText = playlist.name;
-//    document.getElementById('festivalImage').src = playlist.imageUrl;
-//    document.getElementById('festivalDates').innerText = `Dates: ${playlist.dates}`;
-//    document.getElementById('festivalLocation').innerText = `Location: ${playlist.location}`;
-//    document.getElementById('artistLineup').innerHTML = `<strong>Lineup:</strong> ${playlist.lineup.join(', ')}`;
-//    modal.style.display = "block";
+//   document.getElementById("playlist-modal-photo").src = playlist.playlist_art;
+//   document.getElementById("playlist-title").innerText = playlist.playlist_name;
+//   document.getElementById("creator-name").innerText = playlist.playlist_author;
+//   document.getElementById("playlist-songs").innerHTML = ``;
+//   document.getElementById("shuffle-btn").addEventListener('click', () => {
+//     shuffle(playlist.songs);
+//   });
+//   loadSongs(playlist.songs);
+//   modal.style.display = "block";
+//   // document.querySelector("body").toggleClass('stopScroll');
 // }
 
-// span.onclick = function() {
-//    modal.style.display = "none";
-// }
-// window.onclick = function(event) {
-//    if (event.target == modal) {
-//       modal.style.display = "none";
-//    }
-// }
+// span.onclick = function () {
+//   modal.style.display = "none";
+// };
 
-// JavaScript for Opening and Closing the Modal
-const modal = document.getElementById("playlistModal");
-const span = document.getElementsByClassName("close")[0];
-
-function openModal(playlist) {
-  document.getElementById("playlist-modal-photo").src = playlist.playlist_art;
-  document.getElementById("playlist-title").innerText = playlist.playlist_name;
-  document.getElementById("creator-name").innerText = playlist.playlist_author;
-  document.getElementById("playlist-songs").innerHTML = ``;
-  document.getElementById("shuffle-btn").addEventListener('click', () => {
-    shuffle(playlist.songs);
-  });
-  loadSongs(playlist.songs);
-  modal.style.display = "block";
-  // document.querySelector("body").toggleClass('stopScroll');
-}
-
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-// make it so that you exit out only when clicking the "X"
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
 // iterate over data.playlists array
 const loadPlaylists = () => {
@@ -96,11 +73,11 @@ const createCard = (playlist) => {
   return playlistElement;
 };
 
-// execute only once all content loaded
-document.addEventListener("DOMContentLoaded", () => {
-  // we use an arrow function so we can execute multiple functions
-  loadPlaylists();
-});
+// // execute only once all content loaded
+// document.addEventListener("DOMContentLoaded", () => {
+//   // we use an arrow function so we can execute multiple functions
+//   loadPlaylists();
+// });
 
 const createSong = (song) => {
   const songElement = document.createElement("div");
@@ -152,12 +129,4 @@ function shuffle (songList) {
   }
   document.getElementById("playlist-songs").innerHTML = ``;
   loadSongs(songList);
-}
-
-
-
-// selected a playlist to feature
-const selectFeatured = () => {
-  let rand = Math.floor(Math.random() * songList.length);
-  return playlists[rand];
 }

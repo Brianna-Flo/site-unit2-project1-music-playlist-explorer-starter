@@ -190,7 +190,7 @@ header, footer {
 
 #playlist-songs {
   overflow: scroll;
-  height: 60%;
+  height: 100%;
   margin-bottom: 1%;
 }
 
@@ -215,4 +215,39 @@ header, footer {
 #shuffle-btn:hover {
   background-color: #48d0c0;
   transform: scale(1.1);
+}
+
+/* styling for featured songs */
+#featured {
+  display: grid;
+  grid-auto-flow: column;
+  margin: 5%;
+}
+#featured-playlist {
+  width:100%;
+}
+#featured-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+}
+.feat-song-img {
+  height: 100px;
+}
+
+.feat-song {
+  display: flex;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+}
+
+.feat-song-info p,
+.feat-song-info h3{
+  margin: 0;
+  padding: 0;
+}
+
+#feat-songs {
+  width: 50%;
 }

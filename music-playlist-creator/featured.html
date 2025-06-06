@@ -11,24 +11,45 @@
       <p>Music Playlist Explorer</p>
       <nav id="navigation">
         <ul>
-          <li><a href="featured.html">Featured</a></li>
+          <li id="featured-link"><a href="featured.html">Featured</a></li>
           <li><a href="index.html">All</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="featured">
       <section id="featured-playlist">
         <img id="featured-img" src="" />
         <h3 id="featured-name">Playlist Name</h3>
       </section>
-      <section id="featured-songs">
+      <section id="playlist-songs">
+
+        <!-- <div class="song">
+          <img class="feat-song-img" src="">
+          <section class="feat-song-info">
+            <h3>Song Title</h3>
+            <p>Song Artist</p>
+            <p>Album</p>
+            <p>Song Length</p>
+          </section>
+        </div> -->
+
+        <!-- <img class="song-img outline" src='${song.song_img}'/>
+        <div class="song-info">
+            <h4 class="no-space">${song.song_title}</h4>
+            <p class="no-space">${song.song_artist}</p>
+            <p class="no-space">${song.album}</p>
+        </div>
+        <p class="song-time">${song.time}</p> -->
 
       </section>
     </main>
 
-    <footer></footer>
+    <footer>
+
+    </footer>
     <script src="data/data.js"></script>
     <script src="script.js"></script>
+    <script src="featured.js"></script>
   </body>
 </html>
