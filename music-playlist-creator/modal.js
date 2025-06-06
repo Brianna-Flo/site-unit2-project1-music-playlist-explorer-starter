@@ -40,7 +40,7 @@ window.onclick = function (event) {
 // execute only once all content loaded
 document.addEventListener("DOMContentLoaded", () => {
   // we use an arrow function so we can execute multiple functions
-  loadPlaylists();
+  loadPlaylists(playlists);
 });
 
 const createModal = document.getElementById("create-modal");
@@ -110,10 +110,10 @@ const playlistFromForm = () => {
   const songData = songCont.querySelectorAll("#added-song"); // select all songs to be in an array
   for(let thisSong of songData) {
     listOfSongs.push({
-        song_title: document.querySelector("#songTitle").value,
-        song_artist: document.querySelector("#songArtist").value,
-        album: document.querySelector("#songAlbum").value,
-        time: document.querySelector("#songDuration").value,
+        song_title: thisSong.querySelector("#songTitle").value,
+        song_artist: thisSong.querySelector("#songArtist").value,
+        album: thisSong.querySelector("#songAlbum").value,
+        time: thisSong.querySelector("#songDuration").value,
         song_img: "assets/img/song.png",
     });
   }
