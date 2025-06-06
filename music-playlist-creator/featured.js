@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // selected a playlist to feature
 const selectFeatured = () => {
   let rand = Math.floor(Math.random() * playlists.length);
-  return playlists[rand];
+  return playlists[1];
+  // return playlists[rand];
 }
 
 const updateFeatured = (playlist) => {

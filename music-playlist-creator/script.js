@@ -1,30 +1,3 @@
-// // JavaScript for Opening and Closing the Modal
-// const modal = document.getElementById("playlistModal");
-// const span = document.getElementsByClassName("close")[0];
-
-// function openModal(playlist) {
-//   document.getElementById("playlist-modal-photo").src = playlist.playlist_art;
-//   document.getElementById("playlist-title").innerText = playlist.playlist_name;
-//   document.getElementById("creator-name").innerText = playlist.playlist_author;
-//   document.getElementById("playlist-songs").innerHTML = ``;
-//   document.getElementById("shuffle-btn").addEventListener('click', () => {
-//     shuffle(playlist.songs);
-//   });
-//   loadSongs(playlist.songs);
-//   modal.style.display = "block";
-//   // document.querySelector("body").toggleClass('stopScroll');
-// }
-
-// span.onclick = function () {
-//   modal.style.display = "none";
-// };
-
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// };
-
 // iterate over data.playlists array
 const loadPlaylists = () => {
   if (playlists.length === 0) {
@@ -46,12 +19,23 @@ const loadPlaylists = () => {
     let newCard = createCard(playlist);
     // add card to container
     row.appendChild(newCard);
-    newCard.querySelector("#like-btn").addEventListener('click', (event) => {
-      event.stopPropagation();
-      likePlaylist(newCard, playlist);
-    });
     count++;
   }
+  if (count % 4 === 0) {
+    row = document.createElement("section");
+    row.className = "card-row";
+    container.appendChild(row);
+  }
+  let newPlaylist = document.createElement("section");
+  newPlaylist.className = "new-playlist card outline";
+  newPlaylist.addEventListener('click', () => {
+    createNewPlaylist();
+  });
+  newPlaylist.innerHTML = `
+    <i class="fa-regular fa-plus"></i>
+    <h3>Create new playlist</h3>
+  `;
+  row.appendChild(newPlaylist);
 };
 
 // create card for each playlist
@@ -70,6 +54,10 @@ const createCard = (playlist) => {
             <p id="like-cnt">${playlist.likes}</p>
         </section>
     `;
+  playlistElement.querySelector("#like-btn").addEventListener('click', (event) => {
+      event.stopPropagation();
+      likePlaylist(playlistElement, playlist);
+  });
   return playlistElement;
 };
 

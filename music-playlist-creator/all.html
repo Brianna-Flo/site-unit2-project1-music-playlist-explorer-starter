@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Music Playlist Explorer</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/319a6f7fb8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- importing font from google fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"> -->
+  </head>
+  <body>
+    <header class="banner">
+      <p>Music Playlist Explorer</p>
+      <nav id="navigation">
+        <ul>
+          <li><a href="index.html">Featured</a></li>
+          <li><a href="all.html">All</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!--should we use class or id for each playlist card?-->
+      <section id="playlist-cards">
+        <!-- <section class="card-row">
+          <section onclick="openModal()" class="card outline">
+            <img class="outline" id="playlist-photo" />
+            <h3 class="no-space">Playlist Title</h3>
+            <p class="no-space">Creator Name</p>
+            <section class="likes no-space">
+              <img class="outline" id="heart" />
+              <p id="like-count">likes</p>
+            </section>
+          </section>
+          <section onclick="openModal()" class="card outline">
+            <img class="outline" id="playlist-photo" />
+            <h3 class="no-space">Playlist Title</h3>
+            <p class="no-space">Creator Name</p>
+            <section class="likes no-space">
+              <img class="outline" id="heart" />
+              <p id="like-count">likes</p>
+            </section>
+          </section>
+          <section onclick="openModal()" class="card outline">
+            <img class="outline" id="playlist-photo" />
+            <h3 class="no-space">Playlist Title</h3>
+            <p class="no-space">Creator Name</p>
+            <section class="likes no-space">
+              <img class="outline" id="heart" />
+              <p id="like-count">likes</p>
+            </section>
+          </section>
+          <section onclick="openModal()" class="card outline">
+            <img class="outline" id="playlist-photo" />
+            <h3 class="no-space">Playlist Title</h3>
+            <p class="no-space">Creator Name</p>
+            <section class="likes no-space">
+              <img class="outline" id="heart" />
+              <p id="like-count">likes</p>
+            </section>
+          </section>
+        </section>
+
+        <section class="card-row">
+          <section onclick="openModal()" class="card outline">
+            <img class="outline" id="playlist-photo" />
+            <h3 class="no-space">Playlist Title</h3>
+            <p class="no-space">Creator Name</p>
+            <section class="likes no-space">
+              <img class="outline" id="heart" />
+              <p id="like-count">likes</p>
+            </section>
+          </section>
+          <section onclick="openModal()" class="card outline">
+            <img class="outline" id="playlist-photo" />
+            <h3 class="no-space">Playlist Title</h3>
+            <p class="no-space">Creator Name</p>
+            <section class="likes no-space">
+              <img class="outline" id="heart" />
+              <p id="like-count">likes</p>
+            </section>
+          </section>
+          <section onclick="openModal()" class="card outline">
+            <img class="outline" id="playlist-photo" />
+            <h3 class="no-space">Playlist Title</h3>
+            <p class="no-space">Creator Name</p>
+            <section class="likes no-space">
+              <img class="outline" id="heart" />
+              <p id="like-count">likes</p>
+            </section>
+          </section>
+          <section onclick="openModal()" class="card outline">
+            <img class="outline" id="playlist-photo" />
+            <h3 class="no-space">Playlist Title</h3>
+            <p class="no-space">Creator Name</p>
+            <section class="likes no-space">
+              <img class="outline" id="heart" />
+              <p id="like-count">likes</p>
+            </section>
+          </section> -->
+      </section>
+    </main>
+
+    <!-- Modal Structure
+    <div id="festivalModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1 id="festivalName"></h1>
+            <img id="festivalImage" src="" alt="Festival Image">
+            <p id="festivalDates"></p>
+            <p id="festivalLocation"></p>
+            <div id="artistLineup"></div>
+        </div>
+    </div> -->
+
+    <!-- Modal Structure -->
+    <div id="playlistModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <section class="playlist-info">
+          <img class="outline" id="playlist-modal-photo" src="" />
+          <div id="playlist-info">
+            <h2 id="playlist-title">Playlist Title</h2>
+            <p id="creator-name">Creator Name</p>
+          </div>
+        </section>
+        <button id="shuffle-btn">Shuffle</button>
+        <section id="playlist-songs">
+          <!-- <div class="song outline">
+            <img class="song-img outline" />
+            <div class="song-info">
+              <h4 class="no-space">Song Title</h4>
+              <p class="no-space">Artist Name</p>
+              <p class="no-space">Album Name</p>
+            </div>
+            <p class="song-time">0:00</p>
+          </div>
+          <div class="song outline">
+            <img class="song-img outline" />
+            <div class="song-info">
+              <h4 class="no-space">Song Title</h4>
+              <p class="no-space">Artist Name</p>
+              <p class="no-space">Album Name</p>
+            </div>
+            <p class="song-time">0:00</p>
+          </div>
+          <div class="song outline">
+            <img class="song-img outline" />
+            <div class="song-info">
+              <h4 class="no-space">Song Title</h4>
+              <p class="no-space">Artist Name</p>
+              <p class="no-space">Album Name</p>
+            </div>
+            <p class="song-time">0:00</p>
+          </div> -->
+        </section>
+      </div>
+    </div>
+
+    <div id="create-modal" class="modal">
+      <div class="modal-content">
+        <!-- <span class="close">&times;</span> -->
+        <form id="playlist-form">
+          <label for="playlistTitle">Playlist Title:</label>
+          <input
+            type="text"
+            id="playlistTitle"
+            name="playlistTitle"
+            required
+          />
+          <label for="playlistAuthor">Playlist Author:</label>
+          <input
+            type="text"
+            id="playlistAuthor"
+            name="playlistAuthor"
+            required
+          />
+          <section id="song-info">
+            <label for="songTitle">Song Title:</label>
+            <input type="text" id="songTitle" name="songTitle" required />
+            <label for="songArtist">Song Artist:</label>
+            <input type="text" id="songArtist" name="songArtist" required />
+            <label for="songAlbum">Song Album:</label>
+            <input type="text" id="songAlbum" name="songAlbum" required />
+            <label for="songDuration">Song Duration:</label>
+            <input type="text" id="songDuration" name="songDuration" required />
+          </section>
+          <p id="add-song">Add Another Song!</p>
+          <button type="submit">Create Playlist!</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p></p>
+      <div class="footer-block"></div>
+    </footer>
+    <script src="data/data.js"></script>
+    <script src="modal.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,6 +1,5 @@
 body {
   font-family: "Arial", sans-serif;
-  /* font-family: "Winky Rough", sans-serif; */
   margin: 0;
   padding: 0;
   background-color: #DDFFF7;
@@ -226,7 +225,9 @@ body.opened {
 /* styling for featured songs */
 #featured {
   display: grid;
-  grid-auto-flow: column;
+  /* grid-auto-flow: column; */
+  grid-template-columns: 1fr 1fr;
+  gap: 1%;
   margin: 5%;
 }
 #featured-playlist {
@@ -248,12 +249,30 @@ body.opened {
   border-radius: 20px;
 }
 
-.feat-song-info p,
-.feat-song-info h3{
-  margin: 0;
-  padding: 0;
+.featured-songs {
+  max-height: 50%;
+  overflow: auto;
 }
 
-#feat-songs {
-  width: 50%;
+/* Styling for new playlist */
+.new-playlist{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.new-playlist:hover{
+  background-color: #93E1D8;
+}
+
+.new-playlist i{
+  color: black;
+  font-size: 500%;
+}
+
+.new-playlist h3{
+  padding: 5%;
+  text-align: center;
+}
+
