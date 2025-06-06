@@ -30,14 +30,14 @@ window.onclick = function (event) {
   } else if (event.target == createModal) {
     createModal.style.display = "none";
     document.querySelector("body").className = "";
-    const songsCont = document.querySelector('#songs-input');
+    const songsCont = document.querySelector("#songs-input");
 
     // look for added songs
 
     // while (songsCont.children.length > 1) {
     //     songsCont.removeChild(songsCont.lastChild);
     // }
-    console.log("first", document.querySelector("#songs-input"));
+    // console.log("first", document.querySelector("#songs-input"));
     songsCont.innerHTML = `
         <div id="added-song">
             <div>
@@ -53,8 +53,8 @@ window.onclick = function (event) {
             <input type="text" id="songDuration" name="songDuration" required />
             </div>
         </div>
-    `
-    console.log("second", document.querySelector("#songs-input"));
+    `;
+    // console.log("second", document.querySelector("#songs-input"));
   }
 };
 
@@ -77,16 +77,16 @@ function createNewPlaylist() {
   document.querySelector("#songAlbum").value = "";
   document.querySelector("#songDuration").value = "";
 
-//   modalButtonFunctionality();
+  //   modalButtonFunctionality();
   const playlistForm = document.querySelector("#playlist-form");
   addSongFunctionality();
   playlistForm.addEventListener("submit", handleCreatePlaylist);
 }
 
 const createSongInput = (songsCont) => {
-    const newSong = document.createElement("div");
-    newSong.id = "added-song";
-    newSong.innerHTML = `
+  const newSong = document.createElement("div");
+  newSong.id = "added-song";
+  newSong.innerHTML = `
         <div>
             <label for="songTitle">Song Title:</label>
             <input type="text" id="songTitle" name="songTitle" required />
@@ -99,24 +99,24 @@ const createSongInput = (songsCont) => {
             <label for="songDuration">Song Duration:</label>
             <input type="text" id="songDuration" name="songDuration" required />
         </div>`;
-    songsCont.appendChild(newSong);
-    return newSong;
-}
+  songsCont.appendChild(newSong);
+  return newSong;
+};
 
 function handleCreatePlaylist(event) {
   // we do this because we want to customize the behavior that the form submit button does
   event.preventDefault(); // otherwise page will refresh (we dont want that)
-  const newPlaylist = playlistFromForm();
+  const newPlaylist = playlistFromForm(false, null);
   // and add this to the reviews container
   const playlistCards = document.querySelector("#playlist-cards");
   // dont call appendChild, this time we want to append to the top (most recent reviews shown first)
   playlistCards.insertBefore(newPlaylist, playlistCards.lastChild); // first child is the first item in the reviews list
   event.target.reset(); // resets the form when you submit
-  const songsCont = document.querySelector('#songs-input');
-//   while (songsCont.children.length > 1) {
-//         songsCont.removeChild(songsCont.lastChild);
-//   }
-    songsCont.innerHTML = `
+  const songsCont = document.querySelector("#songs-input");
+  //   while (songsCont.children.length > 1) {
+  //         songsCont.removeChild(songsCont.lastChild);
+  //   }
+  songsCont.innerHTML = `
         <div id="added-song">
             <div>
             <label for="songTitle">Song Title:</label>
@@ -131,30 +131,32 @@ function handleCreatePlaylist(event) {
             <input type="text" id="songDuration" name="songDuration" required />
             </div>
         </div>
-    `
+    `;
   document.querySelector("body").className = "";
   createModal.style.display = "none";
 }
 
-const playlistFromForm = () => {
-  const songCont = document.querySelector('#songs-input');
+const playlistFromForm = (update, playlistToUpdate) => {
+  const songCont = document.querySelector("#songs-input");
   const listOfSongs = [];
   const songData = songCont.querySelectorAll("#added-song"); // select all songs to be in an array
-  for(let thisSong of songData) {
+  for (let thisSong of songData) {
     listOfSongs.push({
-        song_title: thisSong.querySelector("#songTitle").value,
-        song_artist: thisSong.querySelector("#songArtist").value,
-        album: thisSong.querySelector("#songAlbum").value,
-        time: thisSong.querySelector("#songDuration").value,
-        song_img: "assets/img/song.png",
+      song_title: thisSong.querySelector("#songTitle").value,
+      song_artist: thisSong.querySelector("#songArtist").value,
+      album: thisSong.querySelector("#songAlbum").value,
+      time: thisSong.querySelector("#songDuration").value,
+      song_img: "assets/img/song.png",
     });
   }
+
+  const changeLikes = update ? playlistToUpdate.likes : 0;
   const playlist = {
     playlistID: ++numPlaylists,
     playlist_name: document.querySelector("#playlistTitle").value,
     playlist_author: document.querySelector("#playlistAuthor").value,
     playlist_art: "assets/img/playlist.png",
-    likes: 0,
+    likes: changeLikes,
     isLiked: false,
     songs: listOfSongs,
   };
@@ -163,19 +165,22 @@ const playlistFromForm = () => {
 };
 
 let playlistEdited = null;
+let currPlaylist = null;
 function editPlaylist(playlistElement, playlist) {
   playlistEdited = playlistElement;
+  currPlaylist = playlist;
   document.querySelector("body").className = "opened";
   createModal.style.display = "block";
   document.querySelector("#playlistTitle").value = playlist.playlist_name;
   document.querySelector("#playlistAuthor").value = playlist.playlist_author;
-  
+
   // populate the first song input
   document.querySelector("#songTitle").value = playlist.songs[0].song_title;
   document.querySelector("#songArtist").value = playlist.songs[0].song_artist;
   document.querySelector("#songAlbum").value = playlist.songs[0].album;
   document.querySelector("#songDuration").value = playlist.songs[0].time;
-  for(let i = 1; i < playlist.songs.length; i++) { // iterate through remaining songs
+  for (let i = 1; i < playlist.songs.length; i++) {
+    // iterate through remaining songs
     const newSong = createSongInput(document.querySelector("#songs-input"));
     newSong.querySelector("#songTitle").value = playlist.songs[i].song_title;
     newSong.querySelector("#songArtist").value = playlist.songs[i].song_artist;
@@ -187,25 +192,35 @@ function editPlaylist(playlistElement, playlist) {
   playlistForm.addEventListener("submit", handleUpdatePlaylist);
 }
 
+function handleAddSongClick() {
+  const songsCont = document.querySelector("#songs-input");
+  createSongInput(songsCont);
+}
+
 function addSongFunctionality() {
   const playlistForm = document.querySelector("#playlist-form");
   const addSong = document.querySelector("#add-song-btn");
-  const songsCont = document.querySelector('#songs-input');
-  addSong.addEventListener("click", () => {
-    createSongInput(songsCont);
+  const songsCont = document.querySelector("#songs-input");
+
+  addSong.addEventListener("click", handleAddSongClick);
+  addSong.addEventListener("close", () => {
+    addSong.removeEventListener(handleAddSongClick);
   });
 }
 
 function handleUpdatePlaylist(event) {
-  //   we do this because we want to customize the behavior that the form submit button does
   event.preventDefault();
 
   if (playlistEdited !== null) {
-    const newPlaylist = playlistFromForm();
+    const newPlaylist = playlistFromForm(true, currPlaylist);
+    newPlaylist.querySelector(
+      "#playlist-photo"
+    ).src = `${currPlaylist.playlist_art}`;
+    newPlaylist.querySelector("#like-cnt").innerText = `${currPlaylist.likes}`;
     const parentCont = document.querySelector("#playlist-cards");
-    // parentCont.insertBefore(newPlaylist, playlistEdited);
-    // parentCont.removeChild(playlistEdited);
-    parentCont.replaceChild(newPlaylist, playlistEdited);
+    parentCont.insertBefore(newPlaylist, playlistEdited);
+    parentCont.removeChild(playlistEdited);
+    // parentCont.replaceChild(newPlaylist, playlistEdited);
   }
   document.querySelector("body").className = "";
   createModal.style.display = "none";

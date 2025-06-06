@@ -172,9 +172,9 @@ function mostLiked(a, b) {
 }
 
 function dateAdded(a, b) {
-  if (a.playlistID < b.playlistID) {
+  if (a.playlistID > b.playlistID) {
     return -1;
-  } else if (a.playlistID > b.playlistID) {
+  } else if (a.playlistID < b.playlistID) {
     return 1;
   }
   return 0;

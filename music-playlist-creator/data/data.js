@@ -2,7 +2,7 @@ let playlists = [
   {
     playlistID: 1,
     playlist_name: "Lo-Fi",
-    playlist_author: "Various Artists",
+    playlist_author: "blanksignal",
     playlist_art: "assets/img/lofi.jpg",
     likes: 5,
     isLiked: false,
@@ -40,7 +40,7 @@ let playlists = [
   {
     playlistID: 2,
     playlist_name: "Disney Jams",
-    playlist_author: "Walt Disney",
+    playlist_author: "waltdisney",
     playlist_art: "assets/img/disney.jpg",
     likes: 2,
     isLiked: false,
@@ -106,7 +106,7 @@ let playlists = [
   {
     playlistID: 3,
     playlist_name: "Morning Energy",
-    playlist_author: "George Michael",
+    playlist_author: "goldenphase",
     playlist_art: "assets/img/morning.jpg",
     likes: 0,
     isLiked: false,
@@ -144,7 +144,7 @@ let playlists = [
   {
     playlistID: 4,
     playlist_name: "Jazz Essentials",
-    playlist_author: "Chet Baker",
+    playlist_author: "paperplanes",
     playlist_art: "assets/img/jazz.jpg",
     likes: 6,
     isLiked: false,
@@ -182,14 +182,14 @@ let playlists = [
   {
     playlistID: 5,
     playlist_name: "Late Night Drive",
-    playlist_author: "Daniel Caesar",
+    playlist_author: "nightrider",
     playlist_art: "assets/img/night.jpg",
     likes: 2,
     isLiked: false,
     songs: [
       {
         song_title: "Best Part",
-        song_artist: "Daniel Caesar",
+        song_artist: "cookiemonster",
         album: "Freudian",
         time: "3:30",
         song_img: "assets/img/song.png",
@@ -206,7 +206,7 @@ let playlists = [
   {
     playlistID: 6,
     playlist_name: "Summer Jams",
-    playlist_author: "Phineas and Ferb",
+    playlist_author: "colorstatic",
     playlist_art: "assets/img/summer.jpg",
     likes: 8,
     isLiked: false,
@@ -244,7 +244,7 @@ let playlists = [
   {
     playlistID: 7,
     playlist_name: "Throwback Jams",
-    playlist_author: "Rick Astley",
+    playlist_author: "retrokid",
     playlist_art: "assets/img/throwback.jpg",
     likes: 10,
     isLiked: false,
@@ -275,7 +275,7 @@ let playlists = [
   {
     playlistID: 8,
     playlist_name: "Coffee",
-    playlist_author: "Laufey",
+    playlist_author: "addcaffine",
     playlist_art: "assets/img/coffee.jpg",
     likes: 7,
     isLiked: false,
@@ -313,7 +313,7 @@ let playlists = [
   {
     playlistID: 9,
     playlist_name: "Rock Classics",
-    playlist_author: "Rolling Stone",
+    playlist_author: "justrock",
     playlist_art: "assets/img/rock.jpg",
     likes: 12,
     isLiked: false,
