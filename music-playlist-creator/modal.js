@@ -1,3 +1,6 @@
+// number of playlists for playlistID of new playlists
+let numPlaylists = playlists.length;
+
 // JavaScript for Opening and Closing the Modal
 const modal = document.getElementById("playlistModal");
 const span = document.getElementsByClassName("close")[0];
@@ -115,7 +118,7 @@ const playlistFromForm = () => {
     });
   }
   const playlist = {
-    playlistID: 1,
+    playlistID: ++numPlaylists,
     playlist_name: document.querySelector("#playlistTitle").value,
     playlist_author: document.querySelector("#playlistAuthor").value,
     playlist_art: "assets/img/playlist.png",

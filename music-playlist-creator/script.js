@@ -53,6 +53,8 @@ const createCard = (playlist) => {
     playlistElement.querySelector("#like-btn").style.color= "#ED254E";
   }
 
+  console.log(`playlit name ${playlist.playlist_name} ${playlist.playlistID}`);
+
   playlistElement.querySelector("#like-btn").addEventListener('click', (event) => {
       event.stopPropagation();
       likePlaylist(playlistElement, playlist);
@@ -170,6 +172,15 @@ function mostLiked(a, b) {
   if (a.likes > b.likes) {
     return -1;
   } else if (a.likes < b.likes) {
+    return 1;
+  }
+  return 0;
+}
+
+function dateAdded(a, b) {
+  if (a.playlistID < b.playlistID) {
+    return -1;
+  } else if (a.playlistID > b.playlistID) {
     return 1;
   }
   return 0;
