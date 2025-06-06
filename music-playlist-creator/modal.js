@@ -120,6 +120,7 @@ const playlistFromForm = () => {
     playlist_author: document.querySelector("#playlistAuthor").value,
     playlist_art: "assets/img/playlist.png",
     likes: 0,
+    isLiked: false,
     songs: listOfSongs,
   };
   // call create review element to create review element with this submitted review

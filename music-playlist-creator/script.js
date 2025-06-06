@@ -38,7 +38,7 @@ const createCard = (playlist) => {
         <p class="no-space">${playlist.playlist_author}</p>
         <section class="card-btns">
           <section class="likes no-space">
-              <i id="like-btn" class="fa-regular fa-heart" data-liked="false"></i>
+              <i id="like-btn" class="fa-regular fa-heart"'></i>
               <p id="like-cnt">${playlist.likes}</p>
           </section>
           <div>
@@ -47,6 +47,12 @@ const createCard = (playlist) => {
           </div>
         </section>
     `;
+  
+  if (playlist.isLiked) {
+    playlistElement.querySelector("#like-btn").className = "fa-solid fa-heart";
+    playlistElement.querySelector("#like-btn").style.color= "#ED254E";
+  }
+
   playlistElement.querySelector("#like-btn").addEventListener('click', (event) => {
       event.stopPropagation();
       likePlaylist(playlistElement, playlist);
@@ -86,18 +92,17 @@ const loadSongs = (songs) => {
 };
 
 function likePlaylist (newCard, playlist) {
-  const isLiked = newCard.getAttribute('data-liked') === 'true';
-  if (!isLiked) {
+  if (!playlist.isLiked) {
     newCard.querySelector("#like-btn").className = "fa-solid fa-heart";
     newCard.querySelector("#like-btn").style.color= "#ED254E";
-    newCard.setAttribute('data-liked', 'true');
     playlist.likes++;
+    playlist.isLiked = true;
     newCard.querySelector('#like-cnt').innerText = `${playlist.likes}`;
   } else {
     newCard.querySelector("#like-btn").className = "fa-regular fa-heart";
     newCard.querySelector("#like-btn").style.color= "#000000";
-    newCard.setAttribute('data-liked', 'false');
     playlist.likes--;
+    playlist.isLiked = false;
     newCard.querySelector('#like-cnt').innerText = `${playlist.likes}`;
   }
 }
@@ -117,4 +122,64 @@ function shuffle (songList) {
 function deletePlaylist(playlistElement) {
   const container = document.querySelector("#playlist-cards");
   container.removeChild(playlistElement);
+}
+
+// sort functionality
+const chooseSort = document.querySelector("#sort");
+chooseSort.addEventListener("change", () => {
+  switch (chooseSort.value) {
+    case "name":
+      playlists.sort(alphaSort);
+      break;
+    case "name-rev":
+      playlists.sort(alphaRev);
+      break;
+    case "likes":
+      playlists.sort(mostLiked);
+      break;
+    case "likes-rev":
+      playlists.sort(leastLiked);
+      break;
+    case "date":
+      playlists.sort(dateAdded);
+      break;
+  }
+  document.getElementById("playlist-cards").innerHTML = ``;
+  loadPlaylists(playlists);
+});
+
+function alphaSort(a, b) {
+  if (a.playlist_name < b.playlist_name) {
+    return -1;
+  } else if (a.playlist_name > b.playlist_name) {
+    return 1;
+  }
+  return 0;
+}
+
+function alphaRev(a, b) {
+  if (a.playlist_name > b.playlist_name) {
+    return -1;
+  } else if (a.playlist_name < b.playlist_name) {
+    return 1;
+  }
+  return 0;
+}
+
+function mostLiked(a, b) {
+  if (a.likes > b.likes) {
+    return -1;
+  } else if (a.likes < b.likes) {
+    return 1;
+  }
+  return 0;
+}
+
+function leastLiked(a, b) {
+  if (a.likes < b.likes) {
+    return -1;
+  } else if (a.likes > b.likes) {
+    return 1;
+  }
+  return 0;
 }

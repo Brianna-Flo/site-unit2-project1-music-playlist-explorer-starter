@@ -22,12 +22,23 @@
   <body>
     <header class="banner">
       <p>Music Playlist Explorer</p>
-      <nav id="navigation">
-        <ul>
-          <li><a href="index.html">Featured</a></li>
-          <li><a href="all.html">All</a></li>
-        </ul>
-      </nav>
+      <div class="right">
+        <nav id="navigation">
+          <ul>
+            <li><a href="index.html">Featured</a></li>
+            <li><a href="all.html">All</a></li>
+          </ul>
+        </nav>
+      </div>
+      <label for="sort">Sort by:</label>
+      <select id="sort" name="sort">
+        <option id="none" value="none">None</option>
+        <option id="name" value="name">Name A-Z</option>
+        <option id="name-rev" value="name-rev">Name Z-A</option>
+        <option id="likes" value="likes">Most Likes</option>
+        <option id="likes-rev" value="likes-rev">Least Likes</option>
+        <option id="date" value="date">Date Added</option>
+      </select>
     </header>
 
     <main>
