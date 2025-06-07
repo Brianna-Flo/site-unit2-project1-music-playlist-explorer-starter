@@ -2,7 +2,7 @@
 
 Submitted by: Brianna Flores
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: 25 hours spent in total
 
 Deployed Application (**required**): [Music Playlist Explorer Deployed Site] https://site-unit2-project1-music-playlist-ccrj.onrender.com/all.html
 
