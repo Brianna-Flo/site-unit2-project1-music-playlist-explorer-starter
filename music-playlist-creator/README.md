@@ -39,7 +39,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site] htt
     - [x] Appear floating on the screen.
     - [x] The backdrop should appear darker or in a different shade.
 
-- [ ] **Like Playlists**
+- [x] **Like Playlists**
   - [x] Implement functionality to allow users to like playlists by clicking a heart icon on each playlist tile.
   - [x] When the heart icon is clicked:
     - [x] If previously unliked:
@@ -85,7 +85,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site] htt
   - [x] The resulting playlist should display in the grid view.
   - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist. 
 
-- [ ] **Edit Existing Playlists**
+- [x] **Edit Existing Playlists**
   - [x] Enable users to modify the details of existing playlists.
   - [x] Add an edit button to each playlist tile.
   - [x] Users can update the playlist:
