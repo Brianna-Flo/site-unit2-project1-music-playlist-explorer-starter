@@ -129,29 +129,34 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site] htt
   - [x] Selecting a sort option should result in a reordering based on the selected sort while maintaining a grid view.
 
 ### Walkthrough Video
-
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+[`ADD_EMBEDDED_CODE_HERE`](https://www.loom.com/share/b01b3757358d4821bbf8fbc2b67ec9fe?sid=8732d39c-9943-4062-810d-13dab2300171)
+<div>
+    <a href="https://www.loom.com/share/b01b3757358d4821bbf8fbc2b67ec9fe">
+        <p>Brianna Flores Music Playlist Explorer - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/b01b3757358d4821bbf8fbc2b67ec9fe">
+        <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/b01b3757358d4821bbf8fbc2b67ec9fe-75a8f0a70f2adbbe-full-play.gif">
+    </a>
+</div>
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes, the content that we worked on throughout the week allowed me to complete the projects, especially learning about event listeners was useful in implementing the stretch features in the project. As well learning HTML, CSS, and javascript was fundamental in allowing us to complete this project since that is what we used to complete the project. likewise, the lesson on how to use a data.js file was very useful in being able to dynamically create the cards.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+I would have spent more time on fixing some bugs that still persist, such as the like count not persisting when a playlist is edited. As well I would have liked to spend more time on the styling of the app, especially for the stretch features since I was working to implement the features so the design was a bit messy.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+The project demo went well, however I found a bug when I did my first recording that showed that the like count did not persist after a card is edited since after editing, the entire card is recreated and inserted into the parent container, so I redid the video to avoid presenting that bug. Otherwise, the project demo went well, however I will likely have a already pulled up document that contains the data to input since typing in the answers took a bit of time.
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+https://fontawesome.com/
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+All the TA's and instructors were amazing and were able to assist in various issues I had throughout the project!!
