@@ -139,6 +139,14 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site] htt
     </a>
 </div>
 
+<div>
+    <a href="https://www.loom.com/share/7ec611d52f5d49a9ba7df2ba83931892">
+      <p>Editing a playlist - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/7ec611d52f5d49a9ba7df2ba83931892">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/7ec611d52f5d49a9ba7df2ba83931892-36a473b41ebba6aa-full-play.gif">
+    </a>
+  </div>
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
