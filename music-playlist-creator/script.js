@@ -1,3 +1,4 @@
+// Given a list of playlist objects, populates the page with
 const loadPlaylists = (playlistList) => {
   const container = document.getElementById("playlist-cards");
   if (playlistList.length !== 0) {
@@ -11,7 +12,7 @@ const loadPlaylists = (playlistList) => {
 
   let newPlaylist = document.createElement("section");
   newPlaylist.className = "new-playlist card outline";
-  newPlaylist.addEventListener('click', () => {
+  newPlaylist.addEventListener("click", () => {
     createNewPlaylist();
   });
   newPlaylist.innerHTML = `
@@ -21,12 +22,11 @@ const loadPlaylists = (playlistList) => {
   container.appendChild(newPlaylist);
 };
 
-
 // create card for each playlist
 const createCard = (playlist) => {
   const playlistElement = document.createElement("section");
   playlistElement.className = "card outline";
-  playlistElement.addEventListener('click', () => {
+  playlistElement.addEventListener("click", () => {
     openModal(playlist);
   });
   playlistElement.innerHTML = `
@@ -44,23 +44,29 @@ const createCard = (playlist) => {
           </div>
         </section>
     `;
-  
+
   if (playlist.isLiked) {
     playlistElement.querySelector("#like-btn").className = "fa-solid fa-heart";
-    playlistElement.querySelector("#like-btn").style.color= "#ED254E";
+    playlistElement.querySelector("#like-btn").style.color = "#ED254E";
   }
-  playlistElement.querySelector("#like-btn").addEventListener('click', (event) => {
+  playlistElement
+    .querySelector("#like-btn")
+    .addEventListener("click", (event) => {
       event.stopPropagation();
       likePlaylist(playlistElement, playlist);
-  });
-  playlistElement.querySelector("#edit-btn").addEventListener('click', (event) => {
+    });
+  playlistElement
+    .querySelector("#edit-btn")
+    .addEventListener("click", (event) => {
       event.stopPropagation();
       editPlaylist(playlistElement, playlist);
-  });
-  playlistElement.querySelector("#delete-btn").addEventListener('click', (event) => {
+    });
+  playlistElement
+    .querySelector("#delete-btn")
+    .addEventListener("click", (event) => {
       event.stopPropagation();
       deletePlaylist(playlistElement);
-  });
+    });
   return playlistElement;
 };
 
@@ -87,23 +93,23 @@ const loadSongs = (songs) => {
   }
 };
 
-function likePlaylist (newCard, playlist) {
+function likePlaylist(newCard, playlist) {
   if (!playlist.isLiked) {
     newCard.querySelector("#like-btn").className = "fa-solid fa-heart";
-    newCard.querySelector("#like-btn").style.color= "#ED254E";
+    newCard.querySelector("#like-btn").style.color = "#ED254E";
     playlist.likes++;
     playlist.isLiked = true;
-    newCard.querySelector('#like-cnt').innerText = `${playlist.likes}`;
+    newCard.querySelector("#like-cnt").innerText = `${playlist.likes}`;
   } else {
     newCard.querySelector("#like-btn").className = "fa-regular fa-heart";
-    newCard.querySelector("#like-btn").style.color= "#000000";
+    newCard.querySelector("#like-btn").style.color = "#000000";
     playlist.likes--;
     playlist.isLiked = false;
-    newCard.querySelector('#like-cnt').innerText = `${playlist.likes}`;
+    newCard.querySelector("#like-cnt").innerText = `${playlist.likes}`;
   }
 }
 
-function shuffle (songList) {
+function shuffle(songList) {
   let curr = songList.length;
   while (curr != 0) {
     let rand = Math.floor(Math.random() * curr);
@@ -189,9 +195,8 @@ function leastLiked(a, b) {
   return 0;
 }
 
-
 // search bar functionality
-const search = document.querySelector('#search-bar');
+const search = document.querySelector("#search-bar");
 search.addEventListener("submit", filterPlaylists);
 
 const clearSearch = document.querySelector("#clear-search");
@@ -201,12 +206,19 @@ clearSearch.addEventListener("click", () => {
   loadPlaylists(playlists);
 });
 
-function filterPlaylists (event) {
+function filterPlaylists(event) {
   event.preventDefault();
   const searchRequest = document.querySelector("#search").value;
-  
+
   const filteredList = playlists.filter((playlist) => {
-    return playlist.playlist_name.toLowerCase().includes(searchRequest.toLowerCase()) || playlist.playlist_author.toLowerCase().includes(searchRequest.toLowerCase());
+    return (
+      playlist.playlist_name
+        .toLowerCase()
+        .includes(searchRequest.toLowerCase()) ||
+      playlist.playlist_author
+        .toLowerCase()
+        .includes(searchRequest.toLowerCase())
+    );
   });
   document.getElementById("playlist-cards").innerHTML = ``;
   loadPlaylists(filteredList);

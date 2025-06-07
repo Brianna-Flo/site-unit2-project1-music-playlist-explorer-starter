@@ -31,13 +31,6 @@ window.onclick = function (event) {
     createModal.style.display = "none";
     document.querySelector("body").className = "";
     const songsCont = document.querySelector("#songs-input");
-
-    // look for added songs
-
-    // while (songsCont.children.length > 1) {
-    //     songsCont.removeChild(songsCont.lastChild);
-    // }
-    // console.log("first", document.querySelector("#songs-input"));
     songsCont.innerHTML = `
         <div id="added-song">
             <div>
@@ -54,7 +47,6 @@ window.onclick = function (event) {
             </div>
         </div>
     `;
-    // console.log("second", document.querySelector("#songs-input"));
   }
 };
 
@@ -114,9 +106,6 @@ function handleCreatePlaylist(event) {
   playlistCards.insertBefore(newPlaylist, playlistCards.lastChild); // first child is the first item in the reviews list
   event.target.reset(); // resets the form when you submit
   const songsCont = document.querySelector("#songs-input");
-  //   while (songsCont.children.length > 1) {
-  //         songsCont.removeChild(songsCont.lastChild);
-  //   }
   songsCont.innerHTML = `
         <div id="added-song">
             <div>
@@ -152,7 +141,10 @@ const playlistFromForm = (update, playlistToUpdate) => {
   }
 
   const changeLikes = update ? playlistToUpdate.likes : 0;
-  const playlistArt = document.querySelector('#playlistImg').value === '' ? "assets/img/playlist.png" : `${document.querySelector("#playlistImg").value}`; 
+  const playlistArt =
+    document.querySelector("#playlistImg").value === ""
+      ? "assets/img/playlist.png"
+      : `${document.querySelector("#playlistImg").value}`;
   const playlist = {
     playlistID: ++numPlaylists,
     playlist_name: document.querySelector("#playlistTitle").value,
@@ -208,23 +200,6 @@ function addSongFunctionality() {
   addSong.addEventListener("click", handleAddSongClick);
   addSong.addEventListener("close", () => {
     addSong.removeEventListener(handleAddSongClick);
-    // const songsCont = document.querySelector("#songs-input");
-    // songsCont.innerHTML = `
-    //     <div id="added-song">
-    //         <div>
-    //         <label for="songTitle">Song Title:</label>
-    //         <input type="text" id="songTitle" name="songTitle" required />
-    //         <label for="songArtist">Song Artist:</label>
-    //         <input type="text" id="songArtist" name="songArtist" required />
-    //         </div>
-    //         <div>
-    //         <label for="songAlbum">Song Album:</label>
-    //         <input type="text" id="songAlbum" name="songAlbum" required />
-    //         <label for="songDuration">Song Duration:</label>
-    //         <input type="text" id="songDuration" name="songDuration" required />
-    //         </div>
-    //     </div>
-    // `;
   });
 }
 
@@ -237,7 +212,6 @@ function handleUpdatePlaylist(event) {
     const parentCont = document.querySelector("#playlist-cards");
     parentCont.insertBefore(newPlaylist, playlistEdited);
     parentCont.removeChild(playlistEdited);
-    // parentCont.replaceChild(newPlaylist, playlistEdited);
     const songsCont = document.querySelector("#songs-input");
     songsCont.innerHTML = `
             <div id="added-song">

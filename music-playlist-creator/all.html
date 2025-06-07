@@ -36,17 +36,23 @@
           </select>
         </section>
         <form id="search-bar">
-          <input id="search" type="text" placeholder="Search name or author..">
-          <button id="enter-search" class="search-btns" type="submit"><i class="fa fa-search"></i></button>
-          <button id="clear-search" class="search-btns"><i class="fa-solid fa-delete-left"></i></button>
+          <input
+            id="search"
+            type="text"
+            placeholder="Search name or author.."
+          />
+          <button id="enter-search" class="search-btns" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+          <button id="clear-search" class="search-btns">
+            <i class="fa-solid fa-delete-left"></i>
+          </button>
         </form>
       </div>
     </header>
 
     <main>
-      <section id="playlist-cards">
-        
-      </section>
+      <section id="playlist-cards"></section>
     </main>
 
     <!-- Modal Structure -->
@@ -61,9 +67,7 @@
           </div>
         </section>
         <button id="shuffle-btn">Shuffle</button>
-        <section id="playlist-songs">
-    
-        </section>
+        <section id="playlist-songs"></section>
       </div>
     </div>
 
@@ -72,12 +76,7 @@
         <!-- <span class="close">&times;</span> -->
         <form id="playlist-form">
           <label for="playlistTitle">Playlist Title:</label>
-          <input
-            type="text"
-            id="playlistTitle"
-            name="playlistTitle"
-            required
-          />
+          <input type="text" id="playlistTitle" name="playlistTitle" required />
           <label for="playlistAuthor">Playlist Author:</label>
           <input
             type="text"
@@ -86,11 +85,7 @@
             required
           />
           <label for="playlistImg">Playlist Cover:</label>
-          <input
-            type="text"
-            id="playlistImg"
-            name="playlistImg"
-          />
+          <input type="text" id="playlistImg" name="playlistImg" />
           <section id="songs-input">
             <div id="added-song">
               <div>
@@ -103,7 +98,12 @@
                 <label for="songAlbum">Song Album:</label>
                 <input type="text" id="songAlbum" name="songAlbum" required />
                 <label for="songDuration">Song Duration:</label>
-                <input type="text" id="songDuration" name="songDuration" required />
+                <input
+                  type="text"
+                  id="songDuration"
+                  name="songDuration"
+                  required
+                />
               </div>
             </div>
           </section>
