@@ -196,19 +196,20 @@ function leastLiked(a, b) {
 }
 
 // search bar functionality
-const search = document.querySelector("#search-bar");
-search.addEventListener("submit", filterPlaylists);
+const search = document.querySelector("#enter-search");
+search.addEventListener("click", (event) => {
+  filterPlaylists();
+});
 
 const clearSearch = document.querySelector("#clear-search");
 clearSearch.addEventListener("click", () => {
-  search.reset();
+  document.querySelector("#search-input").value = ""
   document.getElementById("playlist-cards").innerHTML = ``;
   loadPlaylists(playlists);
 });
 
-function filterPlaylists(event) {
-  event.preventDefault();
-  const searchRequest = document.querySelector("#search").value;
+function filterPlaylists() {
+  const searchRequest = document.querySelector("#search-input").value;
 
   const filteredList = playlists.filter((playlist) => {
     return (

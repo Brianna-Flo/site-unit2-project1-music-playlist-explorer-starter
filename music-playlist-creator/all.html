@@ -16,7 +16,7 @@
   </head>
   <body>
     <header class="banner">
-      <p>Music Playlist Explorer</p>
+      <p class="left">Music Playlist Explorer</p>
       <div class="right">
         <nav id="navigation">
           <ul>
@@ -35,19 +35,21 @@
             <option id="date" value="date">Date Added</option>
           </select>
         </section>
-        <form id="search-bar">
+        <section id="search-bar">
           <input
-            id="search"
+            id="search-input"
             type="text"
             placeholder="Search name or author.."
           />
-          <button id="enter-search" class="search-btns" type="submit">
+          <!-- <button id="enter-search" class="search-btns">
             <i class="fa fa-search"></i>
           </button>
           <button id="clear-search" class="search-btns">
             <i class="fa-solid fa-delete-left"></i>
-          </button>
-        </form>
+          </button> -->
+          <i id="enter-search" class="search-btns fa fa-search"></i>
+          <i id="clear-search" class="search-btns fa-solid fa-delete-left"></i>
+        </section>
       </div>
     </header>
 
