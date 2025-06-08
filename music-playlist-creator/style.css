@@ -57,7 +57,7 @@ nav ul li a:hover {
 }
 
 /* styling for sorting */
-#section-sort {
+#sort-section {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -69,46 +69,48 @@ nav ul li a:hover {
 }
 
 /* search bar styling */
-
-
 #search-bar {
   width: 100%;
+  gap: 5px;
   display: flex;
-  /* justify-content: space-between;
   align-items: center;
-  gap: 5%;
-  min-width: 100px; */
 }
 
 #search-input {
-  /* width: 15em;
-  height: 2em; */
   width: 100%;
-  font-size: 35%;
-  border-radius: 15px;
-  outline-style: none;
+  border: 3px solid #000000;
+  padding: 5px;
+  border-radius: 7px;
+  outline: none;
 }
 
 .search-btns {
-  font-size: 65%;
+  aspect-ratio: 1/1;
+  color: #000000;
+  font-size: 70%;
 }
 
 .search-btns:hover {
-  transform: scale(1.5);
-}
-
-
-main {
-  margin-bottom: 1%;
+  transform: scale(1.25);
 }
 
 footer {
   padding: 5px;
   /*fixes the footer to the bottom of the page*/
-  
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+main {
+  padding-bottom: 5%;
+}
+
+/* Styling playlist cards */
+#playlist-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .card {
@@ -116,10 +118,9 @@ footer {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 20%;
   margin: 20px;
-  padding: 0px;
   border-radius: 10px;
-  max-width: 15%;
 }
 
 .card:hover {
@@ -127,38 +128,19 @@ footer {
   box-shadow: 0.5em 0.5em 0.5em #93e1d8;
 }
 
-#playlist-cards {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 #playlist-photo {
   width: 100%;
   aspect-ratio: 1/1;
-  margin: 0px;
-  padding: 0px;
   border-radius: 10px 10px 0 0;
 }
 
-.likes {
-  display: flex;
-  align-items: center;
-}
-
-#heart {
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-}
-
+/* playlist buttons */
 .card-btns {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-
-/* for edit button */
 
 .card-btns i {
   margin-right: 5px;
@@ -168,8 +150,43 @@ footer {
   transform: scale(1.5);
 }
 
-/* CSS for Modal */
+/* Like button */
+.likes {
+  display: flex;
+  align-items: center;
+}
 
+#like-btn {
+  margin: 15%;
+}
+
+#like-btn:hover {
+  color: #ed254e;
+}
+
+/* New playlist card */
+.new-playlist:hover {
+  background-color: #93e1d8;
+}
+
+.new-playlist i {
+  color: black;
+  font-size: 500%;
+}
+
+.new-playlist h3 {
+  padding: 5%;
+  text-align: center;
+}
+
+/* new playlist modal */
+#playlist-form {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* Playlist information modal */
 .modal {
   display: none;
   position: fixed;
@@ -223,21 +240,9 @@ footer {
   cursor: pointer;
 }
 
-/* Prevent body scrolling when modal is open */
-
-body.opened {
-  overflow: hidden;
-}
-
-/* Modal Styling */
-
 #playlist-modal-photo {
-  /* width: 150px;
-  height: 100px; */
-  
-  width: 20%;
-  height: 0%;
   aspect-ratio: 1/1;
+  width: 30%;
   margin-right: 20px;
 }
 
@@ -281,23 +286,16 @@ body.opened {
   margin-top: 1%;
 }
 
-#like-btn {
-  /* background-color: transparent;
-  border: none; */
-  
-  margin: 15%;
-}
-
-#like-btn:hover {
-  transform: scale(1.5);
-  color: #ed254e;
+/* Prevent body scrolling when modal is open */
+body.opened {
+  overflow: hidden;
 }
 
 #shuffle-btn {
   background-color: #93e1d8;
   width: 20%;
   aspect-ratio: 3/1;
-  font-size: 150%;
+  font-size: 100%;
 }
 
 #shuffle-btn:hover {
@@ -306,11 +304,9 @@ body.opened {
 }
 
 /* styling for featured songs */
-
-#featured {
+#featured-page {
   display: grid;
   /* grid-auto-flow: column; */
-  
   grid-template-columns: 1fr 1fr;
   gap: 1%;
   margin: 5%;
@@ -338,33 +334,4 @@ body.opened {
 .featured-songs {
   max-height: 100%;
   overflow: scroll;
-}
-
-/* Styling for new playlist */
-
-.new-playlist {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.new-playlist:hover {
-  background-color: #93e1d8;
-}
-
-.new-playlist i {
-  color: black;
-  font-size: 500%;
-}
-
-.new-playlist h3 {
-  padding: 5%;
-  text-align: center;
-}
-
-#playlist-form {
-  display: inline-flex;
-  flex-direction: column;
-  flex-wrap: wrap;
 }
